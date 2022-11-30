@@ -1,5 +1,6 @@
-import './App.css';
+import "./App.css";
 import Home from "./components/Home/Home";
+import Header from "./components/Layout/Header";
 
 function App() {
   return (
@@ -9,9 +10,10 @@ function App() {
       </header>
 
       <div className="homeContainer">
+        <Header />
         <Home />
       </div>
-      
+
       <footer>
         <h1>footer</h1>
       </footer>
