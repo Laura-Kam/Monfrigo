@@ -24,7 +24,7 @@ export default function Header() {
               <h1 className="mb-3" style={{ color: "#EE7AE8" }}>
                 Monfrigo
               </h1>
-              <h5 className="mb-4" style={{ color: "#EE7AE8" }}>
+              <h5 className="mb-4" style={{ color: "black" }}>
                 100% Taste & Zero Waste
               </h5>
               <a
@@ -33,7 +33,7 @@ export default function Header() {
                 role="button"
                 rel="noreferrer"
                 target="_blank"
-                style={{ color: "#EE7AE8" }}
+                style={{ color: "black" }}
               >
                 Sign Up
               </a>
@@ -43,7 +43,7 @@ export default function Header() {
                 target="_blank"
                 role="button"
                 rel="noreferrer"
-                style={{ color: "#EE7AE8" }}
+                style={{ color: "black" }}
               >
                 Log In
               </a>
