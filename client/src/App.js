@@ -1,7 +1,6 @@
 import logo2 from "./logo.png";
 import './App.css';
-import Home from "./components/Home";
-
+import Home from "./components/Home/Home";
 
 function App() {
   return (
@@ -9,7 +8,9 @@ function App() {
       <header className="App-header">
         <img src={logo2} className="App-logo" alt="logo" />
       </header>
-      <Home />
+      <div className="homeContainer">
+        <Home />
+      </div>
     </div>
   );
 }
