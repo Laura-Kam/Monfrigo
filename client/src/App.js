@@ -1,6 +1,8 @@
 import "./App.css";
 import Home from "./components/Home/Home";
 import Header from "./components/Layout/Header";
+import Footer from "./components/Layout/Footer";
+import NavBar from "./components/Layout/NavBar";
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
 
       <div className="homeContainer">
         <Header />
+        <NavBar />
         <Home />
+        <Footer />
       </div>
 
       <footer>
