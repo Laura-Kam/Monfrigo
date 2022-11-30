@@ -9,15 +9,15 @@ export default function NavBar() {
     >
       <div className="container-fluid">
         <nav aria-label="breadcrumb">
-          <ol className="breadcrumb">
+          <ol className="breadcrumb" style={{ fontFamily: "cormorant SC" }}>
             <li className="breadcrumb-item">
-              <a href="#">Home</a>
+              <a href="#Home">Home</a>
             </li>
             <li className="breadcrumb-item">
-              <a href="#">Library</a>
+              <a href="#library">Library</a>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
-              <a href="#">Data</a>
+              <a href="#data">Data</a>
             </li>
           </ol>
         </nav>

@@ -1,10 +1,12 @@
 .cardContainer {
     width: 100%;
-    border: 1px solid black;
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(3fr, 6fr);
+    padding: 2rem 3rem 2rem 3rem;
+    background: rgb(100,179,244);
+    background: linear-gradient(0deg, rgba(100,179,244,1) 0%, rgba(196,250,155,1) 100%); 
 }
 
 @media (max-width: 900px) {
@@ -19,4 +21,17 @@
         grid-template-columns: repeat(1, 1fr);
         grid-auto-rows: minmax(1fr, 3fr);
     }
+}
+
+.searchComponentContainer {
+    background-color: #c4fa9b;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#titleHeader {
+    margin: 2rem 0 2rem 0;
 }

@@ -9,16 +9,18 @@ const Home = () => {
 
     return (
         <>
-            <h1>What ingredients do you want to use?</h1>
-            <Searchbar />
+            <div className="searchComponentContainer">
+                <h1 id="titleHeader">What ingredients do you want to use?</h1>
+                <Searchbar />
+            </div>
             <div className="cardContainer">
-                <Card dummyText={dummyText1}/>
-                <Card dummyText={dummyText2}/>
-                <Card dummyText={dummyText1}/>
-                <Card dummyText={dummyText1}/>
-                <Card dummyText={dummyText2}/>
-                <Card dummyText={dummyText1}/>
-                <Card dummyText={dummyText2}/>
+                <Card dummyText={dummyText1} />
+                <Card dummyText={dummyText2} />
+                <Card dummyText={dummyText1} />
+                <Card dummyText={dummyText1} />
+                <Card dummyText={dummyText2} />
+                <Card dummyText={dummyText1} />
+                <Card dummyText={dummyText2} />
             </div>
         </>
     )
