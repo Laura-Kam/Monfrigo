@@ -14,10 +14,18 @@ export default function NavBar() {
               <a href="#Home">Home</a>
             </li>
             <li className="breadcrumb-item">
-              <a href="#library">Library</a>
+              <a href="#library">Your recipes</a>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
-              <a href="#data">Data</a>
+              <a href="#data">About us</a>
+            </li>
+            <li className="breadcrumb-item active" aria-current="page">
+              <a href="#data">Contact us</a>
+            </li>
+            <li className="breadcrumb-item active" aria-current="page">
+              <a href="#data">
+                <span id="logout">Logout</span>
+              </a>
             </li>
           </ol>
         </nav>

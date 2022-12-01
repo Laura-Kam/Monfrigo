@@ -20,10 +20,19 @@ export default function Header() {
           }}
         >
           <div className="d-flex justify-content-center align-items-center h-100">
-            <div className="text-white">
+            <div className="text-white h-100">
               <h1 className="mb-3" style={{ color: "black" }}>
                 Monfrigo
               </h1>
+
+              <span
+                className="material-symbols-outlined"
+                style={{
+                  color: "#e75480",
+                }}
+              >
+                soup_kitchen
+              </span>
               <h5 className="mb-4" style={{ color: "black" }}>
                 100% Taste & Zero Waste
               </h5>
