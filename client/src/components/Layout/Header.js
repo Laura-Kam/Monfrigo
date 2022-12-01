@@ -1,6 +1,8 @@
 import React from "react";
+import FormDialog from "../SignUp/FormDialog";
 
 export default function Header() {
+
   return (
     <header style={{ width: "100%", fontFamily: "cormorant SC" }}>
       {/* <!-- Background image --> */}
@@ -36,26 +38,30 @@ export default function Header() {
               <h5 className="mb-4" style={{ color: "black" }}>
                 100% Taste & Zero Waste
               </h5>
-              <a
+              <button
                 className="btn btn-outline-light btn-lg m-2"
-                href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-                role="button"
                 rel="noreferrer"
                 target="_blank"
                 style={{ color: "black" }}
               >
-                Sign Up
-              </a>
-              <a
+                <FormDialog formProps={{
+                  type: "Sign up",
+                  info: `To sign up to this website, please enter your username, email address and password here.`,
+
+                }}/>
+              </button>
+              <button
                 className="btn btn-outline-light btn-lg m-2"
-                href="https://mdbootstrap.com/docs/standard/"
-                target="_blank"
-                role="button"
                 rel="noreferrer"
+                target="_blank"
                 style={{ color: "black" }}
               >
-                Log In
-              </a>
+                <FormDialog formProps={{
+                  type: "Log in",
+                  info: `To log in to this website, please enter your username and password here.`,
+                  
+                }}/>
+              </button>
             </div>
           </div>
         </div>
