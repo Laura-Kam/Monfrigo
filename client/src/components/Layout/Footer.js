@@ -72,7 +72,7 @@ export default function Header() {
           {/* <!-- Github --> */}
           <a
             className="btn btn-outline-light btn-floating m-1"
-            href="#!"
+            href="https://github.com/Laura-Kam/Monfrigo/"
             role="button"
             style={{ color: "black" }}
           >
