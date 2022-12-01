@@ -33,7 +33,7 @@ export default function Contact() {
           Email Us at : laura_ek@yahoo.co.uk<br></br> Address: Birmingham, UK.
         </p>
         <a
-          href="#"
+          href="/"
           class="btn btn-primary"
           style={{
             backgroundColor: "#FFE7E9",

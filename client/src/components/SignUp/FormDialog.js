@@ -20,6 +20,7 @@ export default function FormDialog({ formProps }) {
     setOpen(false);
   };
 
+
   return (
     <div>
       <Button onClick={handleClickOpen}>{formProps.type}</Button>

@@ -6,8 +6,9 @@ import Home from "./components/Home/Home";
 import Header from "./components/Layout/Header";
 import Footer from "./components/Layout/Footer";
 import NavBar from "./components/Layout/NavBar";
-import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
+import About from "./components/Endpoints/About";
+import Contact from "./components/Endpoints/Contact";
+import SavedRecipes from "./components/Endpoints/SavedRecipes";
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -25,6 +26,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/About" element={<About />} />
+              <Route path="/recipes" element={<SavedRecipes />} />
               <Route path="/Contact" element={<Contact />} />
             </Routes>
           </div>
