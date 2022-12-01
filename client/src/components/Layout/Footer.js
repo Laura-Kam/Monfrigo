@@ -8,14 +8,14 @@ export default function Header() {
       style={{
         width: "100%",
         height: "150px",
-        backgroundColor: "#64b3f4",
+        backgroundColor: "#C4FA9B",
         fontFamily: "cormorant SC",
       }}
     >
       {/* <!-- Grid container --> */}
       <div
         className="container p-4"
-        style={{ backgroundColor: "#64b3f4", width: "100%", height: "100%" }}
+        style={{ backgroundColor: "#C4FA9B", width: "100%", height: "100%" }}
       >
         {/* <!-- Section: Social media --> */}
         <section className="mb-4">
