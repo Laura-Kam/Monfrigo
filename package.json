@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Laura-Kam/Monfrigo#readme",
   "dependencies": {
-    "concurrently": "^7.6.0",
-    "mdb-ui-kit": "^6.0.1"
+    "concurrently": "^7.6.0"
+    
   }
 }
