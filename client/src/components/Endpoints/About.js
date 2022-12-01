@@ -38,7 +38,7 @@ export default function About() {
           food in your fridge.
         </p>
         <a
-          href="#"
+          href="/"
           class="btn btn-primary"
           style={{
             backgroundColor: "#FFE7E9",

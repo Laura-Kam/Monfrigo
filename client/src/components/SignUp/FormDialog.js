@@ -23,7 +23,7 @@ export default function FormDialog({ formProps }) {
 
     return (
         <div>
-            <Button variant="outlined" onClick={handleClickOpen}>
+            <Button onClick={handleClickOpen}>
                 {formProps.type}
             </Button>
             <Dialog open={open} onClose={handleClose} >
