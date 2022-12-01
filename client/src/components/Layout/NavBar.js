@@ -3,9 +3,9 @@ import React from "react";
 export default function NavBar() {
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-light bg-light 
-    style={{width: 100%,
-    }}"
+      className="navbar navbar-light bg-light"
+    style={{width: "100%",
+    }}
     >
       <div className="container-fluid">
         <nav aria-label="breadcrumb">
