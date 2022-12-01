@@ -1,6 +1,9 @@
 .card {
     padding: 1rem;
-    font-family: "cormorant SC";
+    font-family: "Proza Libre";
     font-weight: 800;
-    font-size: 1.6rem;
+    font-size: 15px;
+    margin: 30px;
+    padding: 32px;
+    background-color:#FFE7E9 ;
 }

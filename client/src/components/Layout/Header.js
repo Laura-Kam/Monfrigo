@@ -4,7 +4,9 @@ import FormDialog from "../SignUp/FormDialog";
 export default function Header() {
 
   return (
-    <header style={{ width: "100%", fontFamily: "cormorant SC" }}>
+    <header
+      style={{ width: "100%", fontFamily: "cormorant SC", fontWeight: "bold" }}
+    >
       {/* <!-- Background image --> */}
       <div
         id="intro-example"
