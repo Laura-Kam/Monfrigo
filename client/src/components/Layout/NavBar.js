@@ -11,19 +11,19 @@ export default function NavBar() {
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb" style={{ fontFamily: "cormorant SC" }}>
             <li className="breadcrumb-item">
-              <a href="#Home">Home</a>
+              <a href="/">Home</a>
             </li>
             <li className="breadcrumb-item">
-              <a href="#library">Your recipes</a>
+              <a href="/yourrecipes">Your recipes</a>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
-              <a href="#data">About us</a>
+              <a href="/about">About us</a>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
-              <a href="#data">Contact us</a>
+              <a href="/contact">Contact us</a>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
-              <a href="#data">
+              <a href="/logout">
                 <span id="logout">Logout</span>
               </a>
             </li>
