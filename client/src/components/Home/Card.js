@@ -3,6 +3,7 @@ import "../../css/Card.css";
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
 import Button from "@mui/material/Button";
+import StarRating from "../Home/StarRating";
 
 const Card = (props) => {
 
@@ -28,6 +29,7 @@ const Card = (props) => {
             </Button>
             <h2>Card</h2>
             <p>{props.dummyText}</p>
+            <p><StarRating /></p>
         </div>
     )
 }
