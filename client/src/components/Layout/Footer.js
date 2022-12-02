@@ -106,7 +106,7 @@ export default function Header() {
                   />
                   <label
                     className="form-label"
-                    for="form5Example21"
+                    htmlFor="form5Example21"
                     style={{ color: "black" }}
                   >
                     Email address
