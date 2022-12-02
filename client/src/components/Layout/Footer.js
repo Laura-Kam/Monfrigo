@@ -7,7 +7,7 @@ export default function Header() {
       className="text-center text-white "
       style={{
         width: "100%",
-        height: "100%",
+        height: "150px",
         backgroundColor: "#C4FA9B",
         fontFamily: "cormorant SC",
       }}

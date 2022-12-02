@@ -23,7 +23,7 @@ export default function NavBar() {
               <a href="/contact">Contact us</a>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
-              <a href="/">
+              <a href="/logout">
                 <span id="logout">Logout</span>
               </a>
             </li>
