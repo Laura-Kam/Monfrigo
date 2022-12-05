@@ -46,15 +46,7 @@ export default function Carousel() {
           width: "450px",
           rounded: "10px",
         }}
-      >
-        <p
-          style={{
-            color: "#CF4A72",
-          }}
-        >
-          Our Recipes
-        </p>
-      </MDBCarouselItem>
+      ></MDBCarouselItem>
       <MDBCarouselItem
         className="w-100 d-block square bg-primary rounded-5"
         itemId={3}
@@ -65,15 +57,7 @@ export default function Carousel() {
           width: "450px",
           rounded: "10px",
         }}
-      >
-        <p
-          style={{
-            color: "#CF4A72",
-          }}
-        >
-          Our Recipes
-        </p>
-      </MDBCarouselItem>
+      ></MDBCarouselItem>
       <MDBCarouselItem
         className="w-100 d-block square bg-primary rounded-5"
         itemId={4}
@@ -84,15 +68,7 @@ export default function Carousel() {
           width: "450px",
           rounded: "10px",
         }}
-      >
-        <p
-          style={{
-            color: "#CF4A72",
-          }}
-        >
-          Our Recipes
-        </p>
-      </MDBCarouselItem>
+      ></MDBCarouselItem>
       <MDBCarouselItem
         className="w-100 d-block square bg-primary rounded-5"
         itemId={5}
@@ -108,9 +84,7 @@ export default function Carousel() {
           style={{
             color: "#CF4A72",
           }}
-        >
-          Our Recipes
-        </p>
+        ></p>
       </MDBCarouselItem>
     </MDBCarousel>
   );
