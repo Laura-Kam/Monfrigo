@@ -31,8 +31,11 @@ const Card = (props) => {
             </Button>
             <h2 className="recipeTitle">{props.data.name}</h2>
             <h3 className="recipeDescription">{props.data.description}</h3>
+            <p></p>
             {/* <p className="instructions">{handleApiInstructions}</p> */}
-            <img alt={props.data.thumbnail_alt_text} src={props.data.thumbnail_url} />
+            <img className="recipeImage" alt={props.data.thumbnail_alt_text} src={props.data.thumbnail_url} />
+            <p></p>
+            <p>Enjoy the taste of what you didn't waste?  Rate this recipe below!</p>
             <p><StarRating /></p>
         </div>
     )
