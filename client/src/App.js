@@ -9,6 +9,9 @@ import NavBar from "./components/Layout/NavBar";
 import About from "./components/Endpoints/About";
 import Contact from "./components/Endpoints/Contact";
 import SavedRecipes from "./components/Endpoints/SavedRecipes";
+
+import LogOutMessage from "./components/Endpoints/LogOutMessage";
+
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 // import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 
@@ -33,6 +36,7 @@ const theme = createTheme(themeOptions);
 
 function App() {
   return (
+
     <ThemeProvider theme={theme}>
       <ApolloProvider client={client}>
         <Router>
@@ -52,6 +56,7 @@ function App() {
         </Router>
       </ApolloProvider>
     </ThemeProvider>
+
   );
 }
 
