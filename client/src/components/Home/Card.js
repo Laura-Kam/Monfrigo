@@ -30,8 +30,9 @@ const Card = (props) => {
                 { iconHandler() }
             </Button>
             <h2 className="recipeTitle">{props.data.name}</h2>
+            <h3 className="recipeDescription">{props.data.description}</h3>
+            {/* <p className="instructions">{handleApiInstructions}</p> */}
             <img alt={props.data.thumbnail_alt_text} src={props.data.thumbnail_url} />
-            {/* <div className="instructions">{console.log(props.data)}</div> */}
             <p><StarRating /></p>
         </div>
     )
