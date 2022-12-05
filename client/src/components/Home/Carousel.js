@@ -72,7 +72,7 @@ export default function Carousel() {
       <MDBCarouselItem
         className="w-100 d-block square bg-primary rounded-5"
         itemId={5}
-        src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG1lYXQlMjBkaXNofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNob2NvbGF0ZSUyMG1vdXNzZSUyMGNha2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
         alt="..."
         style={{
           height: "350px",
