@@ -12,7 +12,7 @@ import SavedRecipes from "./components/Endpoints/SavedRecipes";
 
 import LogOutMessage from "./components/Endpoints/LogOutMessage";
 
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 // import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 
 const client = new ApolloClient({
@@ -22,12 +22,12 @@ const client = new ApolloClient({
 
 const themeOptions = {
   palette: {
-    type: 'light',
+    type: "light",
     primary: {
-      main: '#56965c',
+      main: "#56965c",
     },
     secondary: {
-      main: '#cf4a72',
+      main: "#cf4a72",
     },
   },
 };
@@ -36,7 +36,6 @@ const theme = createTheme(themeOptions);
 
 function App() {
   return (
-
     <ThemeProvider theme={theme}>
       <ApolloProvider client={client}>
         <Router>
@@ -49,6 +48,7 @@ function App() {
               <Route path="/About" element={<About />} />
               <Route path="/recipes" element={<SavedRecipes />} />
               <Route path="/Contact" element={<Contact />} />
+              <Route path="/logout" element={<LogOutMessage />} />
             </Routes>
             {/* </div> */}
             <Footer />
@@ -56,7 +56,6 @@ function App() {
         </Router>
       </ApolloProvider>
     </ThemeProvider>
-
   );
 }
 
