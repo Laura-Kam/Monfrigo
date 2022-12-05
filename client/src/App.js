@@ -9,6 +9,7 @@ import NavBar from "./components/Layout/NavBar";
 import About from "./components/Endpoints/About";
 import Contact from "./components/Endpoints/Contact";
 import SavedRecipes from "./components/Endpoints/SavedRecipes";
+import LogOutMessage from "./components/Endpoints/LogOutMessage";
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -22,13 +23,14 @@ function App() {
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           {/* <div className="container"> */}
-            <NavBar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/About" element={<About />} />
-              <Route path="/recipes" element={<SavedRecipes />} />
-              <Route path="/Contact" element={<Contact />} />
-            </Routes>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/recipes" element={<SavedRecipes />} />
+            <Route path="/Contact" element={<Contact />} />
+            <Route path="/Logout" element={<LogOutMessage />} />
+          </Routes>
           {/* </div> */}
           <Footer />
         </div>
