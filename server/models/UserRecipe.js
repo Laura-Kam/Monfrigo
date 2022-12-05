@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-// const Rating = require('./Rating');
+const Rating = require('./Rating');
 
 
 
@@ -17,7 +17,7 @@ const userRecipeSchema = new Schema({
 },
 { timestamps: true });
 
-const Recipe = mongoose.model('UserRecipe', recipeSchema);
+const Recipe = mongoose.model('Recipe', recipeSchema);
 
 
 
