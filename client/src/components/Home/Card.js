@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../../css/Card.css";
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import StarRating from "../Home/StarRating";
 
 const Card = (props) => {
-    const [apiInstruction, setApiInstruction] = useState([]);
+    // const [apiInstruction, setApiInstruction] = useState([]);
     
     const [save, setSave] = useState(() => 
         props.saved === true ? (true) : (false) 
