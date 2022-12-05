@@ -14,15 +14,15 @@ export default function SavedRecipes() {
                 }}
             >
                 <div class="card-body">
-                    <h1 class="card-title" style={{ fontFamily: "cormorant CS" }}>Your favourite recipes
+                    <h1 class="card-title" style={{ fontFamily: "cormorant CS" }}>Enjoy your favourite recipes</h1>
                         <span class="material-symbols-outlined" style={{ 
+                            display: "block",
                             margin: "0.4rem",
                             color: "#e75480",
                              }}>
                             favorite
                         </span>
-                    </h1>
-                    <span
+                    {/* <span
                         className="material-symbols-outlined"
                         style={{
                             color: "#e75480",
@@ -30,15 +30,14 @@ export default function SavedRecipes() {
                         }}
                     >
                         soup_kitchen
-                    </span>
-                    <h2 class="text-muted">enjoy!</h2>
+                    </span> */}
                 </div>
             </div>
             <div className="cardContainer">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                <Card saved={true}/>
+                <Card saved={true}/>
+                <Card saved={true}/>
+                <Card saved={true}/>
             </div>
         </div>
     )

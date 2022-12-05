@@ -6,11 +6,18 @@ import Button from "@mui/material/Button";
 import StarRating from "../Home/StarRating";
 
 const Card = (props) => {
+    const [apiData, setApiData] = useState({});
+    console.log(props);
+    
+    const [save, setSave] = useState(() => 
+        props.saved === true ? (true) : (false) 
+    );
 
-    const [save, setSave] = useState(false);
+    // const handleApiInstructions = () => {
 
+    // }
+    
     const handleSave = () => {
-        console.log(save);
         setSave(!save);
       };
 
@@ -27,8 +34,8 @@ const Card = (props) => {
             <Button style={{ display: "inline", width: "1rem", left: "85%" }} onClick={handleSave}>
                 { iconHandler() }
             </Button>
-            <h2>Card</h2>
-            <p>{props.dummyText}</p>
+            <h2 className="recipeTitle">{props.data.name}</h2>
+            {/* <p className="instructions">{handleApiInstructions}</p> */}
             <p><StarRating /></p>
         </div>
     )

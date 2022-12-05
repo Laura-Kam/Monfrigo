@@ -16,17 +16,17 @@ const Home = () => {
       <div className="searchComponentContainer">
         <h1 id="titleHeader">What ingredients do you want to use?</h1>
         <Searchbar />
-        <Carousel />
+        {/* <Carousel /> */}
       </div>
-      <div className="cardContainer">
-        <Card dummyText={dummyText1} />
-        <Card dummyText={dummyText2} />
-        <Card dummyText={dummyText1} />
-        <Card dummyText={dummyText1} />
-        <Card dummyText={dummyText2} />
-        <Card dummyText={dummyText1} />
-        <Card dummyText={dummyText2} />
-      </div>
+      {/* <div className="cardContainer">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div> */}
     </>
   );
 };
