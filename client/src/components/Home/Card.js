@@ -7,10 +7,12 @@ import StarRating from "../Home/StarRating";
 
 const Card = (props) => {
 
-    const [save, setSave] = useState(false);
+    const [save, setSave] = useState(() => 
+        props.saved === true ? (true) : (false) 
+    );
+    
 
     const handleSave = () => {
-        console.log(save);
         setSave(!save);
       };
 

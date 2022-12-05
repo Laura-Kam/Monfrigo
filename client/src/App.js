@@ -9,19 +9,36 @@ import NavBar from "./components/Layout/NavBar";
 import About from "./components/Endpoints/About";
 import Contact from "./components/Endpoints/Contact";
 import SavedRecipes from "./components/Endpoints/SavedRecipes";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+// import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 
 const client = new ApolloClient({
   uri: "/graphql",
   cache: new InMemoryCache(),
 });
 
+const themeOptions = {
+  palette: {
+    type: 'light',
+    primary: {
+      main: '#56965c',
+    },
+    secondary: {
+      main: '#cf4a72',
+    },
+  },
+};
+
+const theme = createTheme(themeOptions);
+
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
-          {/* <div className="container"> */}
+    <ThemeProvider theme={theme}>
+      <ApolloProvider client={client}>
+        <Router>
+          <div className="flex-column justify-flex-start min-100-vh">
+            <Header />
+            {/* <div className="container"> */}
             <NavBar />
             <Routes>
               <Route path="/" element={<Home />} />
@@ -29,11 +46,12 @@ function App() {
               <Route path="/recipes" element={<SavedRecipes />} />
               <Route path="/Contact" element={<Contact />} />
             </Routes>
-          {/* </div> */}
-          <Footer />
-        </div>
-      </Router>
-    </ApolloProvider>
+            {/* </div> */}
+            <Footer />
+          </div>
+        </Router>
+      </ApolloProvider>
+    </ThemeProvider>
   );
 }
 
