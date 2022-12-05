@@ -17,7 +17,6 @@
     "graphql": "^15.4.0",
     "jwt-decode": "^2.2.0",
     "mdb-react-ui-kit": "^5.0.0",
-    "mdb-ui-kit": "^6.0.1",
     "react": "^18.2.0",
     "react-bootstrap": "1.0.1",
     "react-dom": "^18.2.0",
