@@ -8,7 +8,6 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
 export default function FormDialog({ formProps }) {
-  console.log(formProps);
 
   const [open, setOpen] = React.useState(false);
 
@@ -35,14 +34,19 @@ export default function FormDialog({ formProps }) {
           }}
         >
           <DialogContentText>{formProps.info}</DialogContentText>
-          <TextField
+
+          { formProps.type === "Log in" ?  null 
+          : <TextField
             sx={{
               width: "70%",
               margin: "1rem 0 0 0",
             }}
             id="outlined-name"
             label="Name"
-          />
+          />}
+
+
+          
           <TextField
             sx={{
               width: "70%",

@@ -1,4 +1,5 @@
 //use populate to get any nested objects with mongoos
+
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Recipe, Rating, UserRecipe } = require('../models');
 const { signToken } = require('../utils/auth');
@@ -102,3 +103,4 @@ Mutation: {
 };
 
 module.exports = resolvers;
+

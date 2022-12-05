@@ -2,20 +2,24 @@ const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
-     _id: ID
-     firstName: String
-     lastName: String
-     email: String
-     recipes: [Recipe]
+    _id: ID
+    firstName: String
+    lastName: String
+    email: String
+    recipes: [Recipe]
   }
 
+  type Auth {
+    user: User
+    token: ID
+  }
 
   type Recipe {
-     _id: ID
-     name: String
-     cookingInstruction: String
-     ingredients: [String]
-     rating: [Rating]
+    _id: ID
+    name: String
+    cookingInstruction: String
+    ingredients: [String]
+    rating: [Rating]
   }
 
   input RecipeInput {
@@ -51,3 +55,4 @@ type Auth {
 `;
 
 module.exports = typeDefs;
+
