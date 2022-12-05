@@ -6,17 +6,12 @@ import Button from "@mui/material/Button";
 import StarRating from "../Home/StarRating";
 
 const Card = (props) => {
-    const [apiData, setApiData] = useState({});
-    console.log(props);
+    // const [apiInstruction, setApiInstruction] = useState([]);
     
     const [save, setSave] = useState(() => 
         props.saved === true ? (true) : (false) 
     );
 
-    // const handleApiInstructions = () => {
-
-    // }
-    
     const handleSave = () => {
         setSave(!save);
       };
@@ -37,6 +32,7 @@ const Card = (props) => {
             <h2 className="recipeTitle">{props.data.name}</h2>
             <h3 className="recipeDescription">{props.data.description}</h3>
             {/* <p className="instructions">{handleApiInstructions}</p> */}
+            <img alt={props.data.thumbnail_alt_text} src={props.data.thumbnail_url} />
             <p><StarRating /></p>
         </div>
     )
