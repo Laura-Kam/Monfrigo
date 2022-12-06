@@ -23,8 +23,8 @@ const typeDefs = gql`
 
   type Rating {
     rating: Int
-    userId: ID
-    recipeId: ID
+    user: User
+    recipe: Recipe
   }
 
   type Query {
@@ -36,7 +36,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    favRecipe: Recipe
+    favRecipe: User
     addRating(rating: Int, recipeId: ID): Recipe
   }
 `;

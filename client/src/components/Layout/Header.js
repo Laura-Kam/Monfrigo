@@ -25,7 +25,7 @@ export default function Header() {
           <div className="d-flex justify-content-center align-items-center h-100">
             <div className="text-white h-100">
               <h1 className="mb-3" style={{ color: "black" }}>
-                Monfrigo
+                Maifrigo
               </h1>
 
               <span
@@ -39,6 +39,7 @@ export default function Header() {
               <h5 className="mb-4" style={{ color: "black" }}>
                 100% Taste & Zero Waste
               </h5>
+
               {Auth.loggedIn() ? null: (
                 <>
                   <button
@@ -69,6 +70,34 @@ export default function Header() {
                   </button>
                 </>
               )}
+
+              <button
+                className="btn btn-outline-light btn-lg m-2"
+                rel="noreferrer"
+                target="_blank"
+                style={{ color: "black" }}
+              >
+                <FormDialog
+                  formProps={{
+                    type: "Sign up",
+                    info: `To sign up to this website, please enter your username, email address and password here.`,
+                  }}
+                />
+              </button>
+              <button
+                className="btn btn-outline-light btn-lg m-2"
+                rel="noreferrer"
+                target="_blank"
+                style={{ color: "black" }}
+              >
+                <FormDialog
+                  formProps={{
+                    type: "Log in",
+                    info: `To log in to this website, please enter your username and password here.`,
+                  }}
+                />
+              </button>
+
             </div>
           </div>
         </div>

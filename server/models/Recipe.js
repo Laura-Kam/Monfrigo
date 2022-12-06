@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const Rating = require('./Rating');
+// const Rating = require('./Rating');
 
-const ingredientSchema = new Schema({
+/* const ingredientSchema = new Schema({
   product:{
     type: String,
     required: true,
   },
-});
+}); */
 
 const recipeSchema = new Schema({
   name: {
@@ -19,8 +19,11 @@ const recipeSchema = new Schema({
     type: String,
     // required: true,
   },
-  ingredients: [ingredientSchema],
-  rating:[Rating.schema],
+  ingredients: [String],
+  rating: {
+    type: Schema.Types.ObjectId,
+    ref: 'Rating'
+  },
 },
 { timestamps: true });
 

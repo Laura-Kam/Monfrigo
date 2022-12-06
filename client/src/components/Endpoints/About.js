@@ -20,7 +20,7 @@ export default function About() {
             fontSize: "50px;",
           }}
         >
-          Monfrigo
+          Maifrigo
         </h5>
         <span
           className="material-symbols-outlined"
