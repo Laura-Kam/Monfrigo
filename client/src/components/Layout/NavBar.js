@@ -23,7 +23,14 @@ export default function NavBar() {
                   <Link to="/recipes">Your recipes</Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
-                  <button onClick={() => Auth.logout()}>
+                  <button
+                    style={{
+                      border: "none",
+                      backgroundColor: "#FBFBFB",
+                      color: "#0000008C",
+                    }}
+                    onClick={() => Auth.logout()}
+                  >
                     <span id="logout">Logout</span>
                   </button>
                 </li>
