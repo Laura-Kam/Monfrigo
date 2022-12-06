@@ -4,7 +4,7 @@ const { AuthenticationError } = require("apollo-server-express");
 
 const resolvers = {
   Query: {
-    user: async () => {},
+    user: async () => { },
     recipes: async () => {
       const recipes = await Recipe.find();
       return recipes;
@@ -20,7 +20,7 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
   },
-  
+
   Mutation: {
     addUser: async (_, args) => {
       const user = await User.create(args);
@@ -36,11 +36,37 @@ const resolvers = {
       return { token, user };
     },
 
-    // favRecipe: async(_, {recipe}, context) 
+    favRecipe: async (_, { recipe }, context) => {
+      if (context.user) {
+        const recipeInDatabase = await Recipe.findOne({ name: recipe.name });
+        if (recipeInDatabase) {
+          const updatedUser = await User.findByIdAndUpdate(
+            { _id: context.user._id },
+            { $push: { recipes: recipeInDatabase._id } },
+            { new: true }
+          ).populate(['recipes'])
+          return updatedUser
+        } else {
+          const newRecipe = await Recipe.create({
+            name: recipe.name,
+            cookingInstruction: recipe.cookingInstruction,
+            ingredients: recipe.ingredients
+          });
+          const updatedUser = await User.findByIdAndUpdate(
+            { _id: context.user._id },
+            { $push: { recipes: newRecipe._id } },
+            { new: true }
+          ).populate(['recipes'])
+          return updatedUser
+        }
+      }
+      throw new AuthenticationError('Not logged in');
+    },
     // check if a recipe with recipe.name exists in your db
     // if it exists -> simply add the recipe._id to the user's recipes array
     // if it doesn't exist -> create  the recipe, then add the recipe._id to the user's array
     // return the user -> change the return type in typeDefs
+
     addRating: async (parent, { recipes }, context) => {
       console.log(context);
       if (context.user) {
@@ -51,7 +77,7 @@ const resolvers = {
         return recipe;
       }
       throw new AuthenticationError('Not logged in');
-  },
+    },
   },
 };
 
