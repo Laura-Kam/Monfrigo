@@ -10,7 +10,19 @@ const resolvers = {
       const recipes = await Recipe.find();
       return recipes;
     },
+    recipe: async (parent, { _id }, context) => {
+      if (context.user) {
+        const user = await User.findById({_id: context.user._id})
+        .populate({
+          path: 'recipes',   // looks ok      (or recipes.rating or recipe)
+          populate: 'recipe' 
+        });
+        return user.recipes.id(_id);
+      }
+      throw new AuthenticationError('Not logged in');
+    },
   },
+  
   Mutation: {
     addUser: async (_, args) => {
       const user = await User.create(args);
