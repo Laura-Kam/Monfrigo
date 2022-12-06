@@ -3,7 +3,10 @@ import "../../css/Carousel.css";
 import React from "react";
 import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
 
-export default function Carousel() {
+export default function Carousel({ visible }) {
+  const handleVisible = () => {
+    return visible ? "visible" : "hidden"
+  }
   return (
     <MDBCarousel
       showControls
@@ -15,6 +18,7 @@ export default function Carousel() {
         color: "#CF4A72",
         margin: "20px",
         rounded: "10px",
+        visibility: handleVisible(),
       }}
     >
       <MDBCarouselItem

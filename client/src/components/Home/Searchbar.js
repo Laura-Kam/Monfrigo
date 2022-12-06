@@ -10,6 +10,8 @@ const Searchbar = () => {
 
   const [recipes, setRecipes] = useState([]);
 
+  const [caVisibility, setCaVisisbility] = useState(true);
+
   const options = {
     method: 'GET',
     url: 'https://tasty.p.rapidapi.com/recipes/list',
@@ -23,29 +25,38 @@ const Searchbar = () => {
   const apiSearch = async (event) => {
     event.preventDefault();
 
-    axios.request(options).then(function (response) {
-      setRecipes(response.data.results);
-    }).catch(function (error) {
-      console.error(error);
-    });
+
+    searchInput
+      ?
+      axios.request(options).then(function (response) {
+        setCaVisisbility(false);
+        if (!response.data.count) {
+          setRecipes(null)
+        }
+        setRecipes(response.data.results);
+      }).catch(function (error) {
+        console.error(error);
+      })
+      : alert("Please enter a value")
+
+
+
   }
 
   return (
     <>
       <div className="searchContainer">
-        <form onSubmit={apiSearch}>
+        <form onSubmit={apiSearch} id="searchForm">
           <label htmlFor="search"></label>
           <input type="search" id="search" placeholder="milk flour eggs" onChange={(e) => setSearchInput(e.target.value)} />
-          <button type="submit" id="searchBtn">
+          <button type="submit" id="searchBtn" htmlFor="searchForm">
             Search
           </button>
         </form>
       </div>
-      <Carousel />
+      <Carousel visible={caVisibility} />
       <div className="cardContainer">
-        {recipes.map(recipe => {
-          return <Card data={recipe}/>
-        })}
+        {recipes.map(recipe => <Card data={recipe} />)}
       </div>
     </>
   );
