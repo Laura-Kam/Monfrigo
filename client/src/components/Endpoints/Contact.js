@@ -14,7 +14,7 @@ export default function Contact() {
       <div class="card-header">Contact Us</div>
 
       <div class="card-body">
-        <h5 class="card-title">Monfrigo</h5>
+        <h5 class="card-title">Maifrigo</h5>
         <span
           className="material-symbols-outlined"
           style={{
