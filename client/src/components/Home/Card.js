@@ -7,10 +7,9 @@ import StarRating from "../Home/StarRating";
 
 const Card = (props) => {
 
-    const apiData = props.data;
+    const apiData = props.data || null;
 
-    const apiIngredients = apiData.sections[0].components;
-    console.log(apiData)
+    const apiIngredients = apiData.sections[0].components || null;
 
     const [save, setSave] = useState(() =>
         props.saved === true ? (true) : (false)
@@ -33,7 +32,7 @@ const Card = (props) => {
             <Button style={{ display: "inline", width: "1rem", left: "85%" }} onClick={handleSave}>
                 {iconHandler()}
             </Button>
-            {apiData
+            { apiData
                 ?
                 <>
                     <h2 className="recipeTitle">{apiData.name}</h2>
