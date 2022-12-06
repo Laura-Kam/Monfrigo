@@ -38,16 +38,16 @@ const Card = (props) => {
                 <>
                     <h2 className="recipeTitle">{apiData.name}</h2>
                     <h3 className="recipeDescription">{apiData.description}</h3>
-                    <img alt={apiData.thumbnail_alt_text} src={apiData.thumbnail_url} />
+                    <img className="recipeImage" alt={props.data.thumbnail_alt_text} src={props.data.thumbnail_url} />
                     <ul>
                         <h2>Ingredients</h2>
                         {apiIngredients.map(ingredient => <li>{ingredient.raw_text}</li>)}
                     </ul>
+                    <p>Enjoy the taste of what you didn't waste?  Rate this recipe below!</p>
                     <p><StarRating /></p>
                 </>
                 : <h2>Hello</h2>
-            }
-
+            }           
         </div>
     )
 }
