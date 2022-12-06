@@ -34,10 +34,10 @@ export default function SavedRecipes() {
                 </div>
             </div>
             <div className="cardContainer">
+                {/* <Card saved={true}/>
                 <Card saved={true}/>
                 <Card saved={true}/>
-                <Card saved={true}/>
-                <Card saved={true}/>
+                <Card saved={true}/> */}
             </div>
         </div>
     )

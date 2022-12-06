@@ -1,8 +1,7 @@
 import React from "react";
 import FormDialog from "../SignUp/FormDialog";
-
+import Auth from "../../utils/auth";
 export default function Header() {
-
   return (
     <header
       style={{ width: "100%", fontFamily: "cormorant SC", fontWeight: "bold" }}
@@ -40,30 +39,36 @@ export default function Header() {
               <h5 className="mb-4" style={{ color: "black" }}>
                 100% Taste & Zero Waste
               </h5>
-              <button
-                className="btn btn-outline-light btn-lg m-2"
-                rel="noreferrer"
-                target="_blank"
-                style={{ color: "black" }}
-              >
-                <FormDialog formProps={{
-                  type: "Sign up",
-                  info: `To sign up to this website, please enter your username, email address and password here.`,
-
-                }}/>
-              </button>
-              <button
-                className="btn btn-outline-light btn-lg m-2"
-                rel="noreferrer"
-                target="_blank"
-                style={{ color: "black" }}
-              >
-                <FormDialog formProps={{
-                  type: "Log in",
-                  info: `To log in to this website, please enter your username and password here.`,
-                  
-                }}/>
-              </button>
+              {Auth.loggedIn() ? null: (
+                <>
+                  <button
+                    className="btn btn-outline-light btn-lg m-2"
+                    rel="noreferrer"
+                    target="_blank"
+                    style={{ color: "black" }}
+                  >
+                    <FormDialog
+                      formProps={{
+                        type: "Sign up",
+                        info: `To sign up to this website, please enter your username, email address and password here.`,
+                      }}
+                    />
+                  </button>
+                  <button
+                    className="btn btn-outline-light btn-lg m-2"
+                    rel="noreferrer"
+                    target="_blank"
+                    style={{ color: "black" }}
+                  >
+                    <FormDialog
+                      formProps={{
+                        type: "Log in",
+                        info: `To log in to this website, please enter your username and password here.`,
+                      }}
+                    />
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>
