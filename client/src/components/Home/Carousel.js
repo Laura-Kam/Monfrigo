@@ -5,8 +5,8 @@ import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
 
 export default function Carousel({ visible }) {
   const handleVisible = () => {
-    return visible ? "visible" : "collapse"
-  }
+    return visible ? "block" : "none";
+  };
   return (
     <MDBCarousel
       showControls
@@ -18,7 +18,7 @@ export default function Carousel({ visible }) {
         color: "#CF4A72",
         margin: "20px",
         rounded: "10px",
-        visibility: handleVisible(),
+        display: handleVisible(),
       }}
     >
       <MDBCarouselItem
