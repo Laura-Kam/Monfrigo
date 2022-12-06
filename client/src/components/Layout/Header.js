@@ -2,7 +2,6 @@ import React from "react";
 import FormDialog from "../SignUp/FormDialog";
 
 export default function Header() {
-
   return (
     <header
       style={{ width: "100%", fontFamily: "cormorant SC", fontWeight: "bold" }}
@@ -26,7 +25,7 @@ export default function Header() {
           <div className="d-flex justify-content-center align-items-center h-100">
             <div className="text-white h-100">
               <h1 className="mb-3" style={{ color: "black" }}>
-                Monfrigo
+                Maifrigo
               </h1>
 
               <span
@@ -46,11 +45,12 @@ export default function Header() {
                 target="_blank"
                 style={{ color: "black" }}
               >
-                <FormDialog formProps={{
-                  type: "Sign up",
-                  info: `To sign up to this website, please enter your username, email address and password here.`,
-
-                }}/>
+                <FormDialog
+                  formProps={{
+                    type: "Sign up",
+                    info: `To sign up to this website, please enter your username, email address and password here.`,
+                  }}
+                />
               </button>
               <button
                 className="btn btn-outline-light btn-lg m-2"
@@ -58,11 +58,12 @@ export default function Header() {
                 target="_blank"
                 style={{ color: "black" }}
               >
-                <FormDialog formProps={{
-                  type: "Log in",
-                  info: `To log in to this website, please enter your username and password here.`,
-                  
-                }}/>
+                <FormDialog
+                  formProps={{
+                    type: "Log in",
+                    info: `To log in to this website, please enter your username and password here.`,
+                  }}
+                />
               </button>
             </div>
           </div>
