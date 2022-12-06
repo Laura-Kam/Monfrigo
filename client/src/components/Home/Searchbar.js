@@ -35,7 +35,7 @@ const Searchbar = () => {
       <div className="searchContainer">
         <form onSubmit={apiSearch}>
           <label htmlFor="search"></label>
-          <input type="search" id="search" placeholder="apples" onChange={(e) => setSearchInput(e.target.value)} />
+          <input type="search" id="search" placeholder="milk flour eggs" onChange={(e) => setSearchInput(e.target.value)} />
           <button type="submit" id="searchBtn">
             Search
           </button>

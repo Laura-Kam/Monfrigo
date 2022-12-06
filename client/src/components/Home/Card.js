@@ -6,34 +6,48 @@ import Button from "@mui/material/Button";
 import StarRating from "../Home/StarRating";
 
 const Card = (props) => {
-    // const [apiInstruction, setApiInstruction] = useState([]);
-    
-    const [save, setSave] = useState(() => 
-        props.saved === true ? (true) : (false) 
+
+    const apiData = props.data;
+
+    const apiIngredients = apiData.sections[0].components;
+    console.log(apiData)
+
+    const [save, setSave] = useState(() =>
+        props.saved === true ? (true) : (false)
     );
 
     const handleSave = () => {
         setSave(!save);
-      };
+    };
 
-      const iconHandler = () => {
+    const iconHandler = () => {
         if (save) {
-            return <BookmarkAddedIcon fontSize="large"/>;
+            return <BookmarkAddedIcon fontSize="large" />;
         } else {
-            return <BookmarkAddOutlinedIcon fontSize="large"/>
+            return <BookmarkAddOutlinedIcon fontSize="large" />
         }
-      }
+    }
 
     return (
         <div className="card">
             <Button style={{ display: "inline", width: "1rem", left: "85%" }} onClick={handleSave}>
-                { iconHandler() }
+                {iconHandler()}
             </Button>
-            <h2 className="recipeTitle">{props.data.name}</h2>
-            <h3 className="recipeDescription">{props.data.description}</h3>
-            {/* <p className="instructions">{handleApiInstructions}</p> */}
-            <img alt={props.data.thumbnail_alt_text} src={props.data.thumbnail_url} />
-            <p><StarRating /></p>
+            {apiData
+                ?
+                <>
+                    <h2 className="recipeTitle">{apiData.name}</h2>
+                    <h3 className="recipeDescription">{apiData.description}</h3>
+                    <img alt={apiData.thumbnail_alt_text} src={apiData.thumbnail_url} />
+                    <ul>
+                        <h2>Ingredients</h2>
+                        {apiIngredients.map(ingredient => <li>{ingredient.raw_text}</li>)}
+                    </ul>
+                    <p><StarRating /></p>
+                </>
+                : <h2>Hello</h2>
+            }
+
         </div>
     )
 }
