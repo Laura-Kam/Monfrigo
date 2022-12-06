@@ -28,6 +28,7 @@ const resolvers = {
       return { token, user };
     },
     login: async (_, args) => {
+      console.log('got to login', args)
       const user = await User.findOne({ email: args.email });
       if (!user) throw new AuthenticationError("Something went wrong");
       const password = await user.isCorrectPassword(args.password);

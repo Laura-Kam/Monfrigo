@@ -1,32 +1,34 @@
 import React from "react";
+import Auth from "../../utils/auth";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <nav
-      className="navbar navbar-light bg-light"
-    style={{width: "100%",
-    }}
-    >
+    <nav className="navbar navbar-light bg-light" style={{ width: "100%" }}>
       <div className="container-fluid">
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb" style={{ fontFamily: "cormorant SC" }}>
             <li className="breadcrumb-item">
-              <a href="/">Home</a>
-            </li>
-            <li className="breadcrumb-item">
-              <a href="/recipes">Your recipes</a>
+              <Link to="/">Home</Link>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
-              <a href="/about">About us</a>
+              <Link to="/about">About us</Link>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
-              <a href="/contact">Contact us</a>
+              <Link to="/contact">Contact us</Link>
             </li>
-            <li className="breadcrumb-item active" aria-current="page">
-              <a href="/logout">
-                <span id="logout">Logout</span>
-              </a>
-            </li>
+            {Auth.loggedIn() ? (
+              <>
+                <li className="breadcrumb-item">
+                  <Link to="/recipes">Your recipes</Link>
+                </li>
+                <li className="breadcrumb-item active" aria-current="page">
+                  <button onClick={() => Auth.logout()}>
+                    <span id="logout">Logout</span>
+                  </button>
+                </li>
+              </>
+            ) : null}
           </ol>
         </nav>
       </div>

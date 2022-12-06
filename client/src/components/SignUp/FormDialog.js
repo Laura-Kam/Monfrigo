@@ -6,10 +6,15 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import { useMutation } from "@apollo/client";
+import { ADD_USER, LOGIN } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 
 export default function FormDialog({ formProps }) {
-
   const [open, setOpen] = React.useState(false);
+  const [formState, setFormState] = React.useState({ email: "", password: "" });
+  const [addUser] = useMutation(ADD_USER);
+  const [login] = useMutation(LOGIN);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -19,7 +24,38 @@ export default function FormDialog({ formProps }) {
     setOpen(false);
   };
 
+  const handleFormFieldChange = (e) => {
+    const { name, value } = e.target;
 
+    setFormState({ ...formState, [name]: value });
+  };
+
+  const handleSubmitForm = async () => {
+    try {
+      if (formProps.type === "Log in") {
+        const response = await login({
+          variables: {
+            email: formState.email,
+            password: formState.password,
+          },
+        });
+        const token = response.data.login.token;
+        Auth.login(token);
+      } else {
+        const response = await addUser({
+          variables: {
+            name: formState.name,
+            email: formState.email,
+            password: formState.password,
+          },
+        });
+        const token = response.data.addUser.token;
+        Auth.login(token);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div>
       <Button onClick={handleClickOpen}>{formProps.type}</Button>
@@ -35,18 +71,19 @@ export default function FormDialog({ formProps }) {
         >
           <DialogContentText>{formProps.info}</DialogContentText>
 
-          { formProps.type === "Log in" ?  null 
-          : <TextField
-            sx={{
-              width: "70%",
-              margin: "1rem 0 0 0",
-            }}
-            id="outlined-name"
-            label="Name"
-          />}
+          {formProps.type === "Log in" ? null : (
+            <TextField
+              sx={{
+                width: "70%",
+                margin: "1rem 0 0 0",
+              }}
+              id="outlined-name"
+              label="Name"
+              name="name"
+              onChange={handleFormFieldChange}
+            />
+          )}
 
-
-          
           <TextField
             sx={{
               width: "70%",
@@ -56,6 +93,8 @@ export default function FormDialog({ formProps }) {
             label="Email"
             type="email"
             variant="outlined"
+            name="email"
+            onChange={handleFormFieldChange}
           />
           <TextField
             sx={{
@@ -65,11 +104,13 @@ export default function FormDialog({ formProps }) {
             id="outlined-password-input"
             label="Password"
             type="password"
+            name="password"
+            onChange={handleFormFieldChange}
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>{formProps.type}</Button>
+          <Button onClick={handleSubmitForm}>{formProps.type}</Button>
         </DialogActions>
       </Dialog>
     </div>
