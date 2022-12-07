@@ -1,10 +1,16 @@
 const { Recipe, User } = require("../models");
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
+const { Error } = require("mongoose");
 
 const resolvers = {
   Query: {
-    user: async () => { },
+    user: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id });
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
     recipes: async () => {
       const recipes = await Recipe.find();
       return recipes;
@@ -40,6 +46,10 @@ const resolvers = {
       if (context.user) {
         const recipeInDatabase = await Recipe.findOne({ name: recipe.name });
         if (recipeInDatabase) {
+          // const userHasRecipe = await User.findOne({ recipes: {name: recipe.name}})
+          // if (userHasRecipe) {
+          //   console.log("You already have this saved")
+          // }
           const updatedUser = await User.findByIdAndUpdate(
             { _id: context.user._id },
             { $push: { recipes: recipeInDatabase._id } },
@@ -54,7 +64,7 @@ const resolvers = {
           });
           const updatedUser = await User.findByIdAndUpdate(
             { _id: context.user._id },
-            { $push: { recipes: newRecipe._id } },
+            { $push: { recipes: newRecipe } },
             { new: true }
           ).populate(['recipes'])
           return updatedUser
