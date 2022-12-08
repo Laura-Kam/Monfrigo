@@ -12,7 +12,7 @@ import Auth from "../../utils/auth";
 
 export default function FormDialog({ formProps }) {
   const [open, setOpen] = React.useState(false);
-  const [formState, setFormState] = React.useState({ email: "", password: "" });
+  const [formState, setFormState] = React.useState({username: "", email: "", password: "" });
   const [addUser] = useMutation(ADD_USER);
   const [login] = useMutation(LOGIN);
 
@@ -44,7 +44,7 @@ export default function FormDialog({ formProps }) {
       } else {
         const response = await addUser({
           variables: {
-            name: formState.name,
+            username: formState.username,
             email: formState.email,
             password: formState.password,
           },
@@ -79,7 +79,7 @@ export default function FormDialog({ formProps }) {
               }}
               id="outlined-name"
               label="Name"
-              name="name"
+              name="username"
               onChange={handleFormFieldChange}
             />
           )}

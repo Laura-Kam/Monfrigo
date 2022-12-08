@@ -45,25 +45,22 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    // savedRecipe: async (_, args) => {
-    //   const recipe = await Recipe.create(args);
-    //   return recipe;
-    // },
-
 
     favRecipe: async (_, { recipe }, context) => {
       if (context.user) {
         const recipeInDatabase = await Recipe.findOne({ name: recipe.name });
         if (recipeInDatabase) {
-          // const userHasRecipe = await User.findOne({ recipes: {name: recipe.name}})
-          // if (userHasRecipe) {
-          //   console.log("You already have this saved")
-          // }
-          const updatedUser = await User.findByIdAndUpdate(
-            { _id: context.user._id },
-            { $push: { recipes: recipeInDatabase._id } },
-            { new: true }
-          ).populate(['recipes'])
+          // const updatedUser = await User.findByIdAndUpdate(
+          //   { _id: context.user._id },
+          //   { $addToSet: { recipes: recipeInDatabase._id } },
+          //   { new: true }
+          // ).populate(['recipes'])
+          const updatedUser = await User.findById(context.user._id).populate(['recipes']);
+          const index = updatedUser.recipes.findIndex(storedRecipes => storedRecipes.name === recipe.name);
+          if(index === -1) {
+            updatedUser.recipes.push(recipe);
+            updatedUser.save();
+          }
           return updatedUser
         } else {
           const newRecipe = await Recipe.create({
@@ -73,7 +70,7 @@ const resolvers = {
           });
           const updatedUser = await User.findByIdAndUpdate(
             { _id: context.user._id },
-            { $push: { recipes: newRecipe } },
+            { $addToSet: { recipes: newRecipe } },
             { new: true }
           ).populate(['recipes'])
           return updatedUser
@@ -81,11 +78,6 @@ const resolvers = {
       }
       throw new AuthenticationError('Not logged in');
     },
-
-    // check if a recipe with recipe.name exists in your db
-    // if it exists -> simply add the recipe._id to the user's recipes array
-    // if it doesn't exist -> create  the recipe, then add the recipe._id to the user's array
-    // return the user -> change the return type in typeDefs
 
     addRating: async (parent, { recipes }, context) => {
       console.log(context);
