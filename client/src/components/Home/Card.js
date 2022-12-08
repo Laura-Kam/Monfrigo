@@ -31,9 +31,11 @@ const Card = (props) => {
     };
 
     const apiData = props.data || null;
-
+    
     const apiIngredients = apiData.sections[0].components || null;
-
+    
+    const apiInstructions = props.data.instructions || null;
+    
     const [save, setSave] = useState(() =>
         props.saved === true ? (true) : (false)
     );
@@ -75,9 +77,12 @@ const Card = (props) => {
         <Collapse in={expanded} timeout="auto" unmountOnExit>
                    
                     <ul>
-                        <p></p>
                         <h2 className ="ingredientsTitle">Ingredients</h2>
                         {apiIngredients.map(ingredient => <li>{ingredient.raw_text}</li>)}
+                    </ul>
+                    <ul>
+                        <h2 className ="instructionsTitle">Instructions</h2>
+                        {apiInstructions.map(instruction => <li>{instruction.display_text}</li>)}
                     </ul>
                     </Collapse>
                     <p className = "ratingText">Enjoy the taste of what you didn't waste?  Rate this recipe below!</p>
