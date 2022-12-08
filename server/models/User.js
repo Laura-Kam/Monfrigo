@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const Recipe = require("./Recipe");
 
 const userSchema = new Schema({
-  name: {
+  username: {
     type: String,
     required: true,
     trim: true,

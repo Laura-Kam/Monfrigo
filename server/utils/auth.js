@@ -26,8 +26,8 @@ module.exports = {
   },
 
   // need to adjust according monfrigo sign up
-  signToken: function ({ firstName, lastName, email, _id }) {
-    const payload = { firstName, lastName, email, _id };
+  signToken: function ({ username, email, _id }) {
+    const payload = { username, email, _id };
 
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },

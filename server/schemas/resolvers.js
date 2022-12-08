@@ -45,10 +45,10 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    savedRecipe: async (_, args) => {
-      const recipe = await Recipe.create(args);
-      return recipe;
-    },
+    // savedRecipe: async (_, args) => {
+    //   const recipe = await Recipe.create(args);
+    //   return recipe;
+    // },
 
 
     favRecipe: async (_, { recipe }, context) => {
