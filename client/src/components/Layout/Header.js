@@ -40,7 +40,7 @@ export default function Header() {
                 100% Taste & Zero Waste
               </h5>
 
-              {Auth.loggedIn() ? null: (
+              {Auth.loggedIn() ? null : (
                 <>
                   <button
                     className="btn btn-outline-light btn-lg m-2"
@@ -70,34 +70,6 @@ export default function Header() {
                   </button>
                 </>
               )}
-
-              <button
-                className="btn btn-outline-light btn-lg m-2"
-                rel="noreferrer"
-                target="_blank"
-                style={{ color: "black" }}
-              >
-                <FormDialog
-                  formProps={{
-                    type: "Sign up",
-                    info: `To sign up to this website, please enter your username, email address and password here.`,
-                  }}
-                />
-              </button>
-              <button
-                className="btn btn-outline-light btn-lg m-2"
-                rel="noreferrer"
-                target="_blank"
-                style={{ color: "black" }}
-              >
-                <FormDialog
-                  formProps={{
-                    type: "Log in",
-                    info: `To log in to this website, please enter your username and password here.`,
-                  }}
-                />
-              </button>
-
             </div>
           </div>
         </div>

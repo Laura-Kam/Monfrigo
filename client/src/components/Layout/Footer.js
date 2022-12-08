@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -71,9 +72,9 @@ export default function Header() {
 
           {/* <!-- Github --> */}
           <a
-            className="btn btn-outline-light btn-floating m-1"
             href="https://github.com/Laura-Kam/Monfrigo/"
-            role="button"
+            className="btn btn-outline-light btn-floating m-1"
+            // role="button"
             style={{ color: "black" }}
           >
             <i className="fab fa-github"></i>
