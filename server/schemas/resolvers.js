@@ -1,10 +1,16 @@
 const { Recipe, User } = require("../models");
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
+const { Error } = require("mongoose");
 
 const resolvers = {
   Query: {
-    user: async () => {},
+    user: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id });
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
     recipes: async () => {
       const recipes = await Recipe.find();
       return recipes;
@@ -44,11 +50,43 @@ const resolvers = {
       return recipe;
     },
 
-    // favRecipe: async(_, {recipe}, context)
+
+    favRecipe: async (_, { recipe }, context) => {
+      if (context.user) {
+        const recipeInDatabase = await Recipe.findOne({ name: recipe.name });
+        if (recipeInDatabase) {
+          // const userHasRecipe = await User.findOne({ recipes: {name: recipe.name}})
+          // if (userHasRecipe) {
+          //   console.log("You already have this saved")
+          // }
+          const updatedUser = await User.findByIdAndUpdate(
+            { _id: context.user._id },
+            { $push: { recipes: recipeInDatabase._id } },
+            { new: true }
+          ).populate(['recipes'])
+          return updatedUser
+        } else {
+          const newRecipe = await Recipe.create({
+            name: recipe.name,
+            cookingInstruction: recipe.cookingInstruction,
+            ingredients: recipe.ingredients
+          });
+          const updatedUser = await User.findByIdAndUpdate(
+            { _id: context.user._id },
+            { $push: { recipes: newRecipe } },
+            { new: true }
+          ).populate(['recipes'])
+          return updatedUser
+        }
+      }
+      throw new AuthenticationError('Not logged in');
+    },
+
     // check if a recipe with recipe.name exists in your db
     // if it exists -> simply add the recipe._id to the user's recipes array
     // if it doesn't exist -> create  the recipe, then add the recipe._id to the user's array
     // return the user -> change the return type in typeDefs
+
     addRating: async (parent, { recipes }, context) => {
       console.log(context);
       if (context.user) {
