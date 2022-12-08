@@ -3,6 +3,9 @@ import Carousel from "./Carousel";
 import Card from "./Card";
 import "../../css/Searchbar.css";
 import axios from "axios";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 const Searchbar = () => {
 
@@ -17,7 +20,7 @@ const Searchbar = () => {
     url: 'https://tasty.p.rapidapi.com/recipes/list',
     params: { from: '0', size: '20', tags: 'under_30_minutes', q: searchInput },
     headers: {
-      'X-RapidAPI-Key': '5700097993msh2cd75b0e446c51ap18a767jsn5e6c37c931f1',
+      'X-RapidAPI-Key': process.env.API_KEY,
       'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
     }
   };
