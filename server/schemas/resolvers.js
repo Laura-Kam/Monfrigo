@@ -17,13 +17,16 @@ const resolvers = {
     },
 
     recipe: async (parent, { _id }, context) => {
-      console.log('id:', _id)
+      console.log("id:", _id);
       if (context.user) {
-        const recipe = await Recipe.findById(_id).populate(['ingredients', 'rating']);
+        const recipe = await Recipe.findById(_id).populate([
+          "ingredients",
+          "rating",
+        ]);
         console.log(recipe);
         return recipe;
       }
-      throw new AuthenticationError('Not logged in');
+      throw new AuthenticationError("Not logged in");
     },
   },
 
@@ -34,7 +37,7 @@ const resolvers = {
       return { token, user };
     },
     login: async (_, args) => {
-      console.log('got to login', args)
+      console.log("got to login", args);
       const user = await User.findOne({ email: args.email });
       if (!user) throw new AuthenticationError("Something went wrong");
       const password = await user.isCorrectPassword(args.password);
@@ -42,6 +45,11 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    savedRecipe: async (_, args) => {
+      const recipe = await Recipe.create(args);
+      return recipe;
+    },
+
 
     favRecipe: async (_, { recipe }, context) => {
       if (context.user) {
@@ -73,6 +81,7 @@ const resolvers = {
       }
       throw new AuthenticationError('Not logged in');
     },
+
     // check if a recipe with recipe.name exists in your db
     // if it exists -> simply add the recipe._id to the user's recipes array
     // if it doesn't exist -> create  the recipe, then add the recipe._id to the user's array
@@ -83,11 +92,13 @@ const resolvers = {
       if (context.user) {
         const rating = new Rating({ recipes });
 
-        await User.findByIdAndUpdate(context.user._id, { $push: { ratings: rating } });
+        await User.findByIdAndUpdate(context.user._id, {
+          $push: { ratings: rating },
+        });
 
         return recipe;
       }
-      throw new AuthenticationError('Not logged in');
+      throw new AuthenticationError("Not logged in");
     },
   },
 };
