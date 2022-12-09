@@ -9,10 +9,7 @@ const recipeSchema = new Schema(
       type: String,
       required: true,
     },
-    cookingInstruction: {
-      type: String,
-      required: true,
-    },
+    cookingInstruction: [String],
     ingredients: [String],
     rating: {
       type: Schema.Types.ObjectId,

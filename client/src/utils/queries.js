@@ -1,15 +1,16 @@
 import { gql } from "@apollo/client";
 
 export const GET_ME = gql`
-  query User {
-    user {
-      username
-      recipes {
-        name
-        cookingInstruction
-      }
+query User {
+  user {
+    username
+    recipes {
+      name
+      cookingInstruction
+      ingredients
     }
   }
+}
 `;
 
 export const GET_RECIPES = gql`
@@ -44,4 +45,4 @@ export const GET_ONE_RECIPE = gql`
 `;
 
 
-export const GET_RATING_VALUE = gql``;
+// export const GET_RATING_VALUE = gql``;
