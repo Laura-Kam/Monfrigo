@@ -1,4 +1,4 @@
-const { Recipe, User } = require("../models");
+const { Recipe, User, Rating } = require("../models");
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
 const { Error } = require("mongoose");
