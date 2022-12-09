@@ -26,26 +26,28 @@ const typeDefs = gql`
     name: String
     cookingInstruction: String
     ingredients: [String]
-    }
+  }
 
   type Rating {
     rating: Int
     user: User
-    recipe: Recipe
+    recipeApiId: String
   }
 
   type Query {
     user: User
     recipes: [Recipe]
     recipe(_id: ID): Recipe
+    getRatingValueForRecipe(recipeApiId: String): Int
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     favRecipe(recipe: RecipeInput!): User
-    addRating(rating: Int, recipeId: ID): Recipe
+    addRating(rating: Int, recipeApiId: String): Rating
   }
 `;
 
 module.exports = typeDefs;
+
