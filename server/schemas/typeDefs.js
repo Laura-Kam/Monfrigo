@@ -18,14 +18,16 @@ const typeDefs = gql`
     name: String
     cookingInstruction: [String]
     ingredients: [String]
+    imageLink: String
     rating: [Rating]
   }
 
   input RecipeInput {
     # recipeID: ID
-    name: String
-    cookingInstruction: [String]
-    ingredients: [String]
+    name: String!
+    cookingInstruction: [String]!
+    ingredients: [String]!
+    imageLink: String!
   }
 
   type Rating {

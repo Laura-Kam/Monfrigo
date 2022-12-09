@@ -90,7 +90,7 @@ const Card = (props) => {
                     <h2 className="recipeTitle">{apiData.name}</h2>
                     <h3 className="recipeDescription">{apiData.description}</h3>
                     <p></p>
-                    <img className="recipeImage" alt={props.data.thumbnail_alt_text} src={props.data.thumbnail_url} />
+                    <img className="recipeImage" alt={props.data.thumbnail_alt_text || apiData.name} src={props.data.thumbnail_url || apiData.imageLink} />
 
                     <CardActions disableSpacing>
                         <ExpandMore

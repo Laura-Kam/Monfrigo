@@ -8,6 +8,7 @@ query User {
       name
       cookingInstruction
       ingredients
+      imageLink
     }
   }
 }

@@ -11,6 +11,7 @@ const recipeSchema = new Schema(
     },
     cookingInstruction: [String],
     ingredients: [String],
+    imageLink: String,
     rating: {
       type: Schema.Types.ObjectId,
       ref: "Rating",

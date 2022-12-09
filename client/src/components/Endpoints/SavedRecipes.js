@@ -6,7 +6,6 @@ import { useQuery } from "@apollo/client";
 export default function SavedRecipes() {
     const { loading, error, data } = useQuery(GET_ME);
     const userData = data?.user.recipes || [];
-    console.log(userData)
 
     return (
         <div>
@@ -21,13 +20,13 @@ export default function SavedRecipes() {
             >
                 <div className="card-body">
                     <h1 className="card-title" style={{ fontFamily: "cormorant CS" }}>Enjoy your favourite recipes</h1>
-                        <span className="material-symbols-outlined" style={{ 
-                            display: "block",
-                            margin: "0.4rem",
-                            color: "#e75480",
-                             }}>
-                            favorite
-                        </span>
+                    <span className="material-symbols-outlined" style={{
+                        display: "block",
+                        margin: "0.4rem",
+                        color: "#e75480",
+                    }}>
+                        favorite
+                    </span>
                     {/* <span
                         className="material-symbols-outlined"
                         style={{
@@ -40,7 +39,7 @@ export default function SavedRecipes() {
                 </div>
             </div>
             <div className="cardContainer">
-                {userData.map((recipe) => (<Card data={recipe} saved={true}/>))}
+                {userData.map((recipe) => (<Card data={recipe} saved={true} />))}
             </div>
         </div>
     )
