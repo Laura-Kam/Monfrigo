@@ -43,4 +43,5 @@ export const GET_ONE_RECIPE = gql`
   }
 `;
 
+
 export const GET_RATING_VALUE = gql``;

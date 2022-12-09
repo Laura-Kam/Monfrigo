@@ -4,18 +4,21 @@ const { Schema } = mongoose;
 
 const ratingSchema = new Schema(
   {
+
     rating: { 
       // 4
       type: Number,
       required: true,
     },
-    user: { 
+
+    user: {
       // user A
-        type: Schema.Types.ObjectId,
-        ref: "User",
-      },
-    recipeApiId: String
+      type: Schema.Types.ObjectId,
+      ref: "User",
+
     },
+    recipeApiId: String,
+  },
   { timestamps: true }
 );
 

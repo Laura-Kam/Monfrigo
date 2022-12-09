@@ -5,6 +5,7 @@ import Card from "./Card";
 import "../../css/Searchbar.css";
 import axios from "axios";
 // import dotenv from "dotenv";
+
             /* THIS LINE BREAKS STUFF. HANDLE WITH CARE */
 // import { GET_RATING_VALUE } from "../../utils/queries";
 // dotenv.config()
@@ -16,7 +17,9 @@ const Searchbar = () => {
 
   const [caVisibility, setCaVisisbility] = useState(true);
 
+
   // const [getRatingValueForRecipe] = useLazyQuery(GET_RATING_VALUE);
+
 
   const options = {
     method: "GET",
@@ -39,8 +42,10 @@ const Searchbar = () => {
         }
         const results = response.data.results;
         for (let recipe of results) {
+
           // const ratingValue = getRatingValueForRecipe(recipe.id);
           // recipe.ratingValue = ratingValue;
+
         }
         setRecipes(results);
       } catch (error) {
