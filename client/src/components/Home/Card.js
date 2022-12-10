@@ -36,6 +36,8 @@ const Card = (props) => {
 
     const apiData = (props.data) || null;
 
+    console.log(apiData)
+
     const [favRecipe] = useMutation(FAV_RECIPE)
 
     const apiIngredients = (apiData.ingredients) || apiData.sections[0].components || [];
@@ -57,7 +59,8 @@ const Card = (props) => {
                     name: apiData.name,
                     cookingInstruction: ["Instruction"],
                     ingredients: ["Ingredient"],
-                    imageLink: props.data.thumbnail_url, 
+                    imageLink: props.data.thumbnail_url,
+                    description: apiData.description
                  }
             }
         });

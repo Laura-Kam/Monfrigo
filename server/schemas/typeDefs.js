@@ -19,6 +19,7 @@ const typeDefs = gql`
     cookingInstruction: [String]
     ingredients: [String]
     imageLink: String
+    description: String
     rating: [Rating]
   }
 
@@ -28,6 +29,7 @@ const typeDefs = gql`
     cookingInstruction: [String]!
     ingredients: [String]!
     imageLink: String!
+    description: String!
   }
 
   type Rating {

@@ -72,7 +72,8 @@ const resolvers = {
             name: recipe.name,
             cookingInstruction: recipe.cookingInstruction,
             ingredients: recipe.ingredients,
-            imageLink: recipe.imageLink
+            imageLink: recipe.imageLink,
+            description: recipe.description
           });
           const updatedUser = await User.findByIdAndUpdate(
             { _id: context.user._id },

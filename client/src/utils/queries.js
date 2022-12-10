@@ -9,6 +9,8 @@ query User {
       cookingInstruction
       ingredients
       imageLink
+      _id
+      description
     }
   }
 }

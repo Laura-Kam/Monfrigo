@@ -33,6 +33,7 @@ export const FAV_RECIPE = gql`
       cookingInstruction
       ingredients
       imageLink
+      description
     }
   }
 }
