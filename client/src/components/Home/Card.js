@@ -36,7 +36,7 @@ const Card = (props) => {
 
     const apiData = (props.data) || null;
 
-    console.log(apiData)
+    // console.log(apiData)
 
     const [favRecipe] = useMutation(FAV_RECIPE)
 
@@ -53,12 +53,23 @@ const Card = (props) => {
     };
 
     const HandleSaveRecipe = async () => {
+        const chocolateLatte = [];
+        const strawberryIcecream = [];
+        apiData.sections[0].components.map((ingredient) => {
+            chocolateLatte.push(ingredient.raw_text);
+            return chocolateLatte;
+        });
+        apiData.instructions.map((instruction) => {
+            strawberryIcecream.push(instruction.display_text);
+            return strawberryIcecream;
+        })
+        // console.log("LATE ---------------: ", chocolateLatte, "ICECREAM ----------: ", strawberryIcecream)
         const response = await favRecipe({
             variables: {
                 recipe: { 
                     name: apiData.name,
-                    cookingInstruction: ["Instruction"],
-                    ingredients: ["Ingredient"],
+                    cookingInstruction: strawberryIcecream,
+                    ingredients: chocolateLatte,
                     imageLink: props.data.thumbnail_url,
                     description: apiData.description
                  }
