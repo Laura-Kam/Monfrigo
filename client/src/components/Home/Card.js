@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { FAV_RECIPE } from "../../utils/mutations";
+import { FAV_RECIPE, REMOVE_RECIPE } from "../../utils/mutations";
 import "../../css/Card.css";
 import BookmarkAddOutlinedIcon from "@mui/icons-material/BookmarkAddOutlined";
 import BookmarkAddedIcon from "@mui/icons-material/BookmarkAdded";
 import Button from "@mui/material/Button";
+import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import StarRating from "../Home/StarRating";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import IconButton from "@mui/material/IconButton";
 import { styled } from "@mui/material/styles";
 import Collapse from "@mui/material/Collapse";
 import CardActions from "@mui/material/CardActions";
+import Auth from "../../utils/auth";
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -34,10 +37,10 @@ const Card = (props) => {
     const silverNeedleTea = () => {
         return apiData.recipes ? true : false
     }
-    const [favRecipe] = useMutation(FAV_RECIPE)
+    const [favRecipe] = useMutation(FAV_RECIPE);
+    const [removeRecipe] = useMutation(REMOVE_RECIPE)
     const chocolateLatte = [];
     const strawberryIcecream = [];
-    // console.log(apiData)
     if (props.saved) {
         apiData.ingredients.map((ingredient) => {
             chocolateLatte.push(ingredient);
@@ -71,6 +74,7 @@ const Card = (props) => {
     const [save, setSave] = useState(() =>
         props.saved === true ? (true) : (false)
     );
+    const [remove, setRemove] = useState(false)
     const handleSaveButton = () => {
         setSave(!save);
     };
@@ -94,8 +98,35 @@ const Card = (props) => {
             return <BookmarkAddOutlinedIcon fontSize="large" />;
         }
     };
+    const glazedDoughnuts = () => {
+        return window.location.pathname === "/recipes" 
+        ?  <Button style={{ display: "inline", width: "1rem", left: "85%" }} onClick={() => {
+                HandleRemoveButton()
+                alfredoSauce()
+                glazedDoughnuts()
+            }}>
+                {removeIcon()}
+            </Button>
+        : null
+    }
+    const removeIcon = () => {
+        if (remove) return <DeleteIcon fontSize="large"/>
+        if (!remove) return <DeleteOutlineIcon fontSize="large"/>
+    }
+    const HandleRemoveButton = () => {
+        setRemove(true)
+    }
+    const alfredoSauce = async () => {
+        const response = await removeRecipe({
+            variables: {
+                name: apiData.name
+            }
+        })
+    }
     return (
         <div className="card">
+            {Auth.loggedIn() ?
+            <>
             <Button style={{ display: "inline", width: "1rem", left: "85%" }} onClick={() => {
                 handleSaveButton()
                 if (!save) {
@@ -104,6 +135,8 @@ const Card = (props) => {
             }}>
                 {iconHandler()}
             </Button>
+            {glazedDoughnuts()}
+            </> : null }
             {apiData
                 ?
                 <>
