@@ -109,9 +109,9 @@ const Card = (props) => {
                             <h2 className="ingredientsTitle">Ingredients</h2>
                             {apiIngredients.map(ingredient => {
                                 if (!ingredient.raw_text) {
-                                    return <li>{ingredient}</li>
+                                    return <li className="h5">{ingredient}</li>
                                 } else {
-                                    return <li>{ingredient.raw_text}</li>
+                                    return <li className="h5">{ingredient.raw_text}</li>
                                 }
 
                             })}
@@ -120,15 +120,15 @@ const Card = (props) => {
                             <h2 className="instructionsTitle">Instructions</h2>
                             {apiInstructions.map(instruction => {
                                 if (!instruction.display_text) {
-                                    return <li>{instruction}</li>
+                                    return <li className="h5">{instruction}</li>
                                 } else {
-                                    return <li>{instruction.display_text}</li>
+                                    return <li className="h5">{instruction.display_text}</li>
                                 }
                             }
                             )}
                         </ul>
                     </Collapse>
-                    <p className="ratingText">Enjoy the taste of what you didn't waste?  Rate this recipe below!</p>
+                    <p className="ratingText mt-4">Enjoy the taste of what you didn't waste?  Rate this recipe below!</p>
                     <p><StarRating /></p>
                 </>
                 : <h2>Hello</h2>
