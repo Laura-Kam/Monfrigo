@@ -7,3 +7,9 @@
     padding: 32px;
     background-color:#FFE7E9 ;
 }
+
+.ingredients {
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
