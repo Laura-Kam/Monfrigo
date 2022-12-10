@@ -16,16 +16,18 @@ const typeDefs = gql`
   type Recipe {
     _id: ID
     name: String
-    cookingInstruction: String
+    cookingInstruction: [String]
     ingredients: [String]
+    imageLink: String
     rating: [Rating]
   }
 
   input RecipeInput {
     # recipeID: ID
-    name: String
-    cookingInstruction: String
-    ingredients: [String]
+    name: String!
+    cookingInstruction: [String]!
+    ingredients: [String]!
+    imageLink: String!
   }
 
   type Rating {
@@ -38,7 +40,7 @@ const typeDefs = gql`
     user: User
     recipes: [Recipe]
     recipe(_id: ID): Recipe
-    getRatingValueForRecipe(recipeApiId: String): Number
+    getRatingValueForRecipe(recipeApiId: String): Int
   }
 
   type Mutation {
@@ -50,3 +52,4 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+

@@ -36,3 +36,4 @@ export const FAV_RECIPE = gql`
     }
   }
 `;
+

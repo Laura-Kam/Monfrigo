@@ -1,4 +1,4 @@
-const { Recipe, User } = require("../models");
+const { Recipe, User, Rating } = require("../models");
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
 const { Error } = require("mongoose");
@@ -56,11 +56,6 @@ const resolvers = {
       if (context.user) {
         const recipeInDatabase = await Recipe.findOne({ name: recipe.name });
         if (recipeInDatabase) {
-          // const updatedUser = await User.findByIdAndUpdate(
-          //   { _id: context.user._id },
-          //   { $addToSet: { recipes: recipeInDatabase._id } },
-          //   { new: true }
-          // ).populate(['recipes'])
           const updatedUser = await User.findById(context.user._id).populate([
             "recipes",
           ]);
@@ -77,6 +72,7 @@ const resolvers = {
             name: recipe.name,
             cookingInstruction: recipe.cookingInstruction,
             ingredients: recipe.ingredients,
+            imageLink: recipe.imageLink
           });
           const updatedUser = await User.findByIdAndUpdate(
             { _id: context.user._id },

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { FAV_RECIPE } from "../../utils/mutations";
 import "../../css/Card.css";
 import BookmarkAddOutlinedIcon from "@mui/icons-material/BookmarkAddOutlined";
 import BookmarkAddedIcon from "@mui/icons-material/BookmarkAdded";
@@ -23,25 +25,46 @@ const ExpandMore = styled((props) => {
 }));
 
 const Card = (props) => {
+
+    // const [saveRecipe, { error }] = useMutation(FAV_RECIPE);
+
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
 
-    const apiData = props.data || null;
+    const apiData = (props.data) || null;
 
-    const apiIngredients = apiData.sections[0].components || null;
+    // const apiName = apiData.name || null;
 
-    const apiInstructions = props.data.instructions || null;
+    const apiIngredients = (apiData.ingredients) || apiData.sections[0].components || null;
+
+    const apiInstructions = (apiData.cookingInstruction) || apiData.instructions || null;
 
     const [save, setSave] = useState(() =>
         props.saved === true ? (true) : (false)
     );
 
-    const handleSave = () => {
+    const handleSaveButton = () => {
         setSave(!save);
     };
+
+    const favRecipe = async () => {
+        // const recipeToSave = { apiName, apiInstructions, apiIngredients }
+        // try {
+        //     const { data } = await saveRecipe({
+        //         variables: {
+        //             name: apiName,
+        //             cookingInstructions: apiIngredients,
+        //             ingredients: apiIngredients
+        //         }
+        //     });
+        //     console.log(data)
+        // } catch (error) {
+        //     console.error(error)
+        // }
+    }
 
     const iconHandler = () => {
         if (save) {
@@ -53,7 +76,12 @@ const Card = (props) => {
 
     return (
         <div className="card">
-            <Button style={{ display: "inline", width: "1rem", left: "85%" }} onClick={handleSave}>
+            <Button style={{ display: "inline", width: "1rem", left: "85%" }} onClick={() => {
+                handleSaveButton()
+                if (!save) {
+                    favRecipe()
+                }
+            }}>
                 {iconHandler()}
             </Button>
             {apiData
@@ -62,7 +90,8 @@ const Card = (props) => {
                     <h2 className="recipeTitle">{apiData.name}</h2>
                     <h3 className="recipeDescription">{apiData.description}</h3>
                     <p></p>
-                    <img className="recipeImage" alt={props.data.thumbnail_alt_text} src={props.data.thumbnail_url} />
+                    <img className="recipeImage" alt={props.data.thumbnail_alt_text || apiData.name} src={props.data.thumbnail_url || apiData.imageLink} />
+
                     <CardActions disableSpacing>
                         <ExpandMore
                             expand={expanded}
@@ -78,11 +107,25 @@ const Card = (props) => {
                         <ul>
                             <p></p>
                             <h2 className="ingredientsTitle">Ingredients</h2>
-                            {apiIngredients.map(ingredient => <li>{ingredient.raw_text}</li>)}
+                            {apiIngredients.map(ingredient => {
+                                if (!ingredient.raw_text) {
+                                    return <li>{ingredient}</li>
+                                } else {
+                                    return <li>{ingredient.raw_text}</li>
+                                }
+
+                            })}
                         </ul>
                         <ul>
                             <h2 className="instructionsTitle">Instructions</h2>
-                            {apiInstructions.map(instruction => <li>{instruction.display_text}</li>)}
+                            {apiInstructions.map(instruction => {
+                                if (!instruction.display_text) {
+                                    return <li>{instruction}</li>
+                                } else {
+                                    return <li>{instruction.display_text}</li>
+                                }
+                            }
+                            )}
                         </ul>
                     </Collapse>
                     <p className="ratingText">Enjoy the taste of what you didn't waste?  Rate this recipe below!</p>
