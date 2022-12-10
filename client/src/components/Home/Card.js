@@ -36,11 +36,11 @@ const Card = (props) => {
 
     const apiData = (props.data) || null;
 
-    // const apiName = apiData.name || null;
+    const [favRecipe] = useMutation(FAV_RECIPE)
 
-    const apiIngredients = (apiData.ingredients) || apiData.sections[0].components || null;
+    const apiIngredients = (apiData.ingredients) || apiData.sections[0].components || [];
 
-    const apiInstructions = (apiData.cookingInstruction) || apiData.instructions || null;
+    const apiInstructions = (apiData.cookingInstruction) || apiData.instructions || [];
 
     const [save, setSave] = useState(() =>
         props.saved === true ? (true) : (false)
@@ -50,20 +50,24 @@ const Card = (props) => {
         setSave(!save);
     };
 
-    const favRecipe = async () => {
-        // const recipeToSave = { apiName, apiInstructions, apiIngredients }
-        // try {
-        //     const { data } = await saveRecipe({
-        //         variables: {
-        //             name: apiName,
-        //             cookingInstructions: apiIngredients,
-        //             ingredients: apiIngredients
-        //         }
-        //     });
-        //     console.log(data)
-        // } catch (error) {
-        //     console.error(error)
+    const HandleSaveRecipe = async () => {
+        // const recipeToSave = {
+        //     name: apiData.name,
+        //     cookingInstruction: [apiData.instructions],
+        //     ingredients: [apiIngredients],
+        //     imageLink: props.data.thumbnail_url,
         // }
+        // console.log({recipeToSave});
+        // const response = await favRecipe({
+        //     variables: {
+        //         recipe: { 
+        //             name: "Name",
+        //             cookingInstruction: ["Instruction"],
+        //             ingredients: ["Ingredient"],
+        //             imageLink: "URL", 
+        //          }
+        //     }
+        // });
     }
 
     const iconHandler = () => {
@@ -79,7 +83,7 @@ const Card = (props) => {
             <Button style={{ display: "inline", width: "1rem", left: "85%" }} onClick={() => {
                 handleSaveButton()
                 if (!save) {
-                    favRecipe()
+                    HandleSaveRecipe()
                 }
             }}>
                 {iconHandler()}

@@ -25,15 +25,16 @@ export const ADD_USER = gql`
 
 export const FAV_RECIPE = gql`
   mutation FavRecipe($recipe: RecipeInput!) {
-    favRecipe(recipe: $recipe) {
-      _id
-      email
-      recipes {
-        name
-        cookingInstruction
-        ingredients
-      }
+  favRecipe(recipe: $recipe) {
+    _id
+    email
+    recipes {
+      name
+      cookingInstruction
+      ingredients
+      imageLink
     }
   }
+}
 `;
 

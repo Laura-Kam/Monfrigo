@@ -88,7 +88,7 @@ const Searchbar = () => {
       <Carousel visible={caVisibility} />
       <div className="cardContainer">
         {recipes.map((recipe) => (
-          <Card data={recipe} />
+          <Card key={recipe.name} data={recipe} />
         ))}
       </div>
     </>
