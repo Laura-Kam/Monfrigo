@@ -48,6 +48,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     favRecipe(recipe: RecipeInput!): User
     addRating(rating: Int, recipeApiId: String): Rating
+    removeRecipe(name: String!): User
   }
 `;
 

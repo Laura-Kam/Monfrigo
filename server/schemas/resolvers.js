@@ -85,6 +85,15 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
+    removeRecipe: async (parent, { name }, context) => {
+      const updatedUser = await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $pull: { recipes: { name: name } } },
+        { new: true }
+      );
+      return updatedUser;
+    },
+
     addRating: async (parent, { rating, recipeApiId }, context) => {
       console.log(context);
       if (context.user) {
