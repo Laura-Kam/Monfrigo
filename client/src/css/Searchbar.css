@@ -14,4 +14,12 @@
     border-radius: 25px;
     border-color: black;
     box-shadow: 5px 10px #FFE7E9;
+    width: 140px;
 }
+
+#searchBtn:hover {
+    background-color: #ccc8c8;
+  }
+
+  
+  
