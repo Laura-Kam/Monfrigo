@@ -33,9 +33,37 @@ input[type="radio"] {
     object-fit: cover;
 }
 
-.ingredientsTitle,
-.instructionsTitle {
+.ingredientsTitle {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 30px;
+    font-size: 1.25vw;
+    color: #808080;	
 }
 
+.instructionsTitle {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5vw;
+    color: #696969;
+}
+
+.ratingText {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #006400;
+    font-style: italic;
+    font-size: 0.9vw;
+
+}
+
+.h5-ingredients {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 0.8vw;
+    color: #808080;	
+    list-style-type: square;
+}
+
+.h5-instructions {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1vw;
+    font-weight: lighter;
+    list-style-type: lower-roman;
+    color: #696969;
+}
