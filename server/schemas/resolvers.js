@@ -72,7 +72,8 @@ const resolvers = {
             name: recipe.name,
             cookingInstruction: recipe.cookingInstruction,
             ingredients: recipe.ingredients,
-            imageLink: recipe.imageLink
+            imageLink: recipe.imageLink,
+            description: recipe.description
           });
           const updatedUser = await User.findByIdAndUpdate(
             { _id: context.user._id },
@@ -83,6 +84,15 @@ const resolvers = {
         }
       }
       throw new AuthenticationError("Not logged in");
+    },
+
+    removeRecipe: async (parent, { name }, context) => {
+      const updatedUser = await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $pull: { recipes: { name: name } } },
+        { new: true }
+      );
+      return updatedUser;
     },
 
     addRating: async (parent, { rating, recipeApiId }, context) => {

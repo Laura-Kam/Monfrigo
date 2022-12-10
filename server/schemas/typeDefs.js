@@ -19,6 +19,7 @@ const typeDefs = gql`
     cookingInstruction: [String]
     ingredients: [String]
     imageLink: String
+    description: String
     rating: [Rating]
   }
 
@@ -28,6 +29,7 @@ const typeDefs = gql`
     cookingInstruction: [String]!
     ingredients: [String]!
     imageLink: String!
+    description: String!
   }
 
   type Rating {
@@ -48,6 +50,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     favRecipe(recipe: RecipeInput!): User
     addRating(rating: Int, recipeApiId: String): Rating
+    removeRecipe(name: String!): User
   }
 `;
 
