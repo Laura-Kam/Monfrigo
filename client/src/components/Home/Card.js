@@ -51,23 +51,16 @@ const Card = (props) => {
     };
 
     const HandleSaveRecipe = async () => {
-        // const recipeToSave = {
-        //     name: apiData.name,
-        //     cookingInstruction: [apiData.instructions],
-        //     ingredients: [apiIngredients],
-        //     imageLink: props.data.thumbnail_url,
-        // }
-        // console.log({recipeToSave});
-        // const response = await favRecipe({
-        //     variables: {
-        //         recipe: { 
-        //             name: "Name",
-        //             cookingInstruction: ["Instruction"],
-        //             ingredients: ["Ingredient"],
-        //             imageLink: "URL", 
-        //          }
-        //     }
-        // });
+        const response = await favRecipe({
+            variables: {
+                recipe: { 
+                    name: apiData.name,
+                    cookingInstruction: ["Instruction"],
+                    ingredients: ["Ingredient"],
+                    imageLink: props.data.thumbnail_url, 
+                 }
+            }
+        });
     }
 
     const iconHandler = () => {
