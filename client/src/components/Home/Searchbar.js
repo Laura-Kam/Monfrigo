@@ -4,22 +4,12 @@ import Carousel from "./Carousel";
 import Card from "./Card";
 import "../../css/Searchbar.css";
 import axios from "axios";
-// import dotenv from "dotenv";
-
-            /* THIS LINE BREAKS STUFF. HANDLE WITH CARE */
-// import { GET_RATING_VALUE } from "../../utils/queries";
-// dotenv.config()
 
 const Searchbar = () => {
   const [searchInput, setSearchInput] = useState("");
-
   const [recipes, setRecipes] = useState([]);
-
   const [caVisibility, setCaVisisbility] = useState(true);
-
-
   // const [getRatingValueForRecipe] = useLazyQuery(GET_RATING_VALUE);
-
 
   const options = {
     method: "GET",
@@ -30,7 +20,6 @@ const Searchbar = () => {
       "X-RapidAPI-Host": "tasty.p.rapidapi.com",
     },
   };
-
   const apiSearch = async (event) => {
     event.preventDefault();
     if (searchInput) {
@@ -42,10 +31,8 @@ const Searchbar = () => {
         }
         const results = response.data.results;
         for (let recipe of results) {
-
           // const ratingValue = getRatingValueForRecipe(recipe.id);
           // recipe.ratingValue = ratingValue;
-
         }
         setRecipes(results);
       } catch (error) {
@@ -54,19 +41,6 @@ const Searchbar = () => {
     } else {
       alert("Please enter a value");
     }
-
-    // searchInput
-    //   ?
-    //   axios.request(options).then(function (response) {
-    //     setCaVisisbility(false);
-    //     if (!response.data.count) {
-    //       setRecipes(null)
-    //     }
-    //     setRecipes(response.data.results);
-    //   }).catch(function (error) {
-    //     console.error(error);
-    //   })
-    //   : alert("Please enter a value")
   };
 
   return (

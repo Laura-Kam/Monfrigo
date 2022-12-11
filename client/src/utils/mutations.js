@@ -39,3 +39,20 @@ export const FAV_RECIPE = gql`
 }
 `;
 
+export const REMOVE_RECIPE = gql`
+mutation RemoveRecipe($name: String!) {
+  removeRecipe(name: $name) {
+    _id
+    username
+    email
+    recipes {
+      name
+      cookingInstruction
+      ingredients
+      imageLink
+      _id
+      description
+    }
+  }
+}
+`;

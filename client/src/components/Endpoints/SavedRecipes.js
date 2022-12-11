@@ -2,10 +2,14 @@ import React from "react";
 import { GET_ME } from "../../utils/queries";
 import Card from "../Home/Card";
 import { useQuery } from "@apollo/client";
+import LinearProgress from '@mui/material/LinearProgress';
 
 export default function SavedRecipes() {
     const { loading, error, data } = useQuery(GET_ME);
     const userData = data?.user.recipes || [];
+    const rasberryFlapjack = () => {
+        return loading ? <LinearProgress /> : null
+    }
 
     return (
         <div>
@@ -27,17 +31,9 @@ export default function SavedRecipes() {
                     }}>
                         favorite
                     </span>
-                    {/* <span
-                        className="material-symbols-outlined"
-                        style={{
-                            color: "#e75480",
-                            fontSize: "50px;",
-                        }}
-                    >
-                        soup_kitchen
-                    </span> */}
                 </div>
             </div>
+            {rasberryFlapjack()}
             <div className="cardContainer">
                 {userData.map((recipe) => (<Card data={recipe} saved={true} />))}
             </div>

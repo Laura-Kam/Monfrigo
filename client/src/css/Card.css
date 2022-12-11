@@ -11,5 +11,16 @@
 .ingredients {
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
+.ingredientsTitle, .instructionsTitle {
+    font-size: 2rem;
+}
+
+.recipeTitle {
+    font-size: 2rem;
+}
+
+.recipeDescription, .ratingText {
+    font-size: 1.5rem;
 }
