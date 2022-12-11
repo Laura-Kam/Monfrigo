@@ -24,6 +24,7 @@ export default function NavBar() {
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
                   <button
+                    id="logout"
                     style={{
                       border: "none",
                       backgroundColor: "#FBFBFB",
