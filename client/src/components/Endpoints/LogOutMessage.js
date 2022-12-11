@@ -11,10 +11,18 @@ export default function LogOutMessage() {
         fontFamily: "cormorant CS",
       }}
     >
-      <div class="card-header">You have logged out</div>
+      <div
+        class="card-header"
+        style={{
+          fontSize: "16px",
+          fontWeight: "3px",
+        }}
+      >
+        You have logged out
+      </div>
 
       <div class="card-body">
-        <h5 class="card-title">We hope to see you soon!</h5>
+        <h4 class="card-title">We hope to see you soon!</h4>
         <span
           className="material-symbols-outlined"
           style={{

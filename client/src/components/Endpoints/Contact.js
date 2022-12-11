@@ -14,7 +14,7 @@ export default function Contact() {
       <div class="card-header">Contact Us</div>
 
       <div class="card-body">
-        <h5 class="card-title">Maifrigo</h5>
+        <h4 class="card-title">Maifrigo</h4>
         <span
           className="material-symbols-outlined"
           style={{
@@ -27,10 +27,11 @@ export default function Contact() {
         <p
           class="card-text"
           style={{
-            fontSize: "30px;",
+            fontSize: "16px",
+            fontWeight: "3px",
           }}
         >
-          Email Us at : laura_ek@yahoo.co.uk<br></br> Address: Birmingham, UK.
+          Email Us at : laura_k@yahoo.co.uk<br></br> Address: Birmingham, UK.
         </p>
         <a
           href="/"

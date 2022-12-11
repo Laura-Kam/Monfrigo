@@ -22,7 +22,10 @@ export default function Header() {
             height: "290px",
           }}
         >
-          <div className="d-flex justify-content-center align-items-center h-100">
+          <div
+            className="d-flex justify-content-center align-items-center h-100"
+            style={{ margin: "8px" }}
+          >
             <div className="text-white h-100">
               <h1 className="mb-3" style={{ color: "black" }}>
                 Maifrigo
@@ -43,10 +46,15 @@ export default function Header() {
               {Auth.loggedIn() ? null : (
                 <>
                   <button
-                    className="btn btn-outline-light btn-lg m-2"
+                    className="btn btn-outline-light btn-md m-2"
                     rel="noreferrer"
                     target="_blank"
-                    style={{ color: "black" }}
+                    style={{
+                      color: "black",
+                      padding: "6px",
+                      width: "95px",
+                      fontSize: "17px",
+                    }}
                   >
                     <FormDialog
                       formProps={{
@@ -56,10 +64,15 @@ export default function Header() {
                     />
                   </button>
                   <button
-                    className="btn btn-outline-light btn-lg m-2"
+                    className="btn btn-outline-light btn-md m-2"
                     rel="noreferrer"
                     target="_blank"
-                    style={{ color: "black" }}
+                    style={{
+                      color: "black",
+                      padding: "6px",
+                      width: "95px",
+                      fontSize: "17px",
+                    }}
                   >
                     <FormDialog
                       formProps={{

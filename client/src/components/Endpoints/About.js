@@ -14,14 +14,14 @@ export default function About() {
       <div class="card-header">About Us</div>
 
       <div class="card-body">
-        <h5
+        <h4
           class="card-title"
           style={{
-            fontSize: "50px;",
+            fontSize: "55px;",
           }}
         >
           Maifrigo
-        </h5>
+        </h4>
         <span
           className="material-symbols-outlined"
           style={{
@@ -30,7 +30,7 @@ export default function About() {
         >
           soup_kitchen
         </span>
-        <p class="card-text">
+        <p class="card-text" style={{ fontSize: "16px", fontWeight: "3px" }}>
           We are a small company of five like-minded people, with a passion for
           delicious food and zero-waste.<br></br>
           We were founded in 2022 following discussions with users, who were
