@@ -47,6 +47,8 @@ Apart from the pure ease of the app, the main benefit is to reduce your househol
 
 To get familiar with our application please visit [Maifrigo website](https://maifrigo-recipe-app.herokuapp.com/). Just enter you preferred ingredients into the search bar and press the `search` button. You do not need to be signed up to find and view any of our awesome recipes. If you wish to save you favourites for later, please do sign up and enjoy all of our features.
 
+To run the app please enter "npm run develop" from the root folder.
+
 ![Preview image](./client/src/assets/Screenshot%201.png)
 ![Preview image](./client/src/assets/Screenshot%202.png)
 ![Preview image](./client/src/assets/Screenshot%203.png)
