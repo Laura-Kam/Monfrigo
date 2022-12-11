@@ -1,7 +1,7 @@
 .card {
     padding: 1rem;
-    font-family: "Proza Libre";
-    font-weight: 800;
+    font-family: "Lucinda Sans";
+    font-weight: 10;
     font-size: 15px;
     margin: 30px;
     padding: 32px;
@@ -14,13 +14,13 @@
 }
 
 .ingredientsTitle, .instructionsTitle {
-    font-size: 2rem;
+    font-size: 24px;
 }
 
 .recipeTitle {
-    font-size: 2rem;
+    font-size: 24px;
 }
 
 .recipeDescription, .ratingText {
-    font-size: 1.5rem;
+    font-size: 14px;
 }

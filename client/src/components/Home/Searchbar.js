@@ -54,7 +54,13 @@ const Searchbar = () => {
             placeholder="milk flour eggs"
             onChange={(e) => setSearchInput(e.target.value)}
           />
-          <button class="mx-3" type="submit" id="searchBtn" htmlFor="searchForm">
+          <button
+            class="mx-3"
+            type="submit"
+            id="searchBtn"
+            htmlFor="searchForm"
+            style={{ color: "545454" }}
+          >
             Search
           </button>
         </form>

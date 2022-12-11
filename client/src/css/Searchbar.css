@@ -1,24 +1,25 @@
 .searchContainer {
     margin: 1rem 0 1rem 0;
     font-size: 18px;
+    border-radius: 10px;
 }
 
 .searchContainer > input {
     margin: 0 1rem 0 1rem;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 
 
 #searchBtn {
     border-radius: 25px;
-    border-color: black;
-    box-shadow: 5px 10px #FFE7E9;
-    width: 140px;
+    border-color: "#C4FA9B";
+    width: 75px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #searchBtn:hover {
-    background-color: #ccc8c8;
+    background-color: #FFE7E9;
   }
 
   

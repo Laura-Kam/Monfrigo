@@ -1,13 +1,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Maifrigo
+
 100% Taste Zero Waste
 
-
 ## Project requirements
-Create collaborative MERN-stack single-page application that works with real-world data to solve a real-world challenge, with a focus on data and user demand.. Combine a scalable MongoDB back end, a GraphQL API, and an Express.js and Node.js server with a React front end, implementing user authentication with JWT to build a user-focused platform.
 
-
+We have created a collaborative MERN-stack single-page application that works with real-world data to solve a real-world challenge, with a focus on data and user demand.We have combined a scalable MongoDB back end, a GraphQL API, and an Express.js and Node.js server with a React front end, and implemented user authentication with JWT to build a user-focused platform.
 
 ## Table of Contents
 
@@ -18,19 +17,20 @@ Create collaborative MERN-stack single-page application that works with real-wor
 - [Minimum Viable Product](#mvp)
 - [Ideas for Future Development](#ideas-for-future-development)
 - [Deployed Link](#deployed_link)
-- [Presentation](#presentation)
 - [Created by](#created-by)
 - [License](#license)
 
-
 ## Description
-Maifrigo is the recipe app that will make your life easier.
-With Maifrigo, to make a wholesome, tasty meal you do not need check the recipe first and then go to the supermarket to buy all the necessary ingredients.
-Actually what we offer is completely the opposite! Check what you've already got in the fridge (freezer or cupboard) and choose your favourite recipe that will contain the ingidients you want to use, done!
-The main benefit of the app is reducing your household food waste. Users of the app reported throwing away 60% less using our app. Join us, and do your bit for our planet.
 
+Maifrigo is the recipe app that will make your life easier.
+With Maifrigo to make a wholesome, tasty meal you do not need to check the recipe, make a list and go to the supermarket and spend all that money on extra ingredients.
+What we offer, saves you time and money, and ensures zero waste.
+Check what you already have in your fridge (freezer or cupboard) and choose your favourite recipe from a custom list, that will guarantee you already have those ingredients at home. Done!
+
+Apart from the pure ease of the app, the main benefit is to reduce your household food waste. Users reported throwing away 60% less food. Join us, and do your bit for our planet.
 
 ## Technology used
+
 - JavaScript
 - React
 - Node.js
@@ -43,48 +43,40 @@ The main benefit of the app is reducing your household food waste. Users of the 
 - Tasty API
 - MUI CSS and MDBootstrap.
 
+## Usage
 
-## Usage 
-To get familiar with our application please visit [Maifrigo website](https://maifrigo-recipe-app.herokuapp.com/). Just enter you preferred ingredients into the search bar and press `search` button. You do not need to be signed up to find and view any of awesome recipes that we got. Although if you want to save you favourites for later, please do sign up and enjoy all features.
+To get familiar with our application please visit [Maifrigo website](https://maifrigo-recipe-app.herokuapp.com/). Just enter you preferred ingredients into the search bar and press the `search` button. You do not need to be signed up to find and view any of our awesome recipes. If you wish to save you favourites for later, please do sign up and enjoy all of our features.
+
+To run the app please enter "npm run develop" from the root folder.
 
 ![Preview image](./client/src/assets/Screenshot%201.png)
 ![Preview image](./client/src/assets/Screenshot%202.png)
 ![Preview image](./client/src/assets/Screenshot%203.png)
 
+## MVP (Minimum Viable Product):
 
-## MVP (Minimum Viable Product): 
-
-- An application that supports sustainability by encouraging households to reduce food waste. 
+- An application that supports sustainability by encouraging households to reduce food waste.
 - An application that motivates people to cook at home.
-- An application that is more convenient comparing with standard recipes app.
-
+- An application that is more convenient compared to standard recipes app.
 
 ## Ideas for Future Development:
 
 - Add ratings.
 - Include more specific searches e.g vegetarian/ coeliac.
-- Add comments.
+- Add comments functionality.
 - Add cooking videos.
-
 
 ## URL to Deployed Application:
 
 [Maifrigo Webpage](https://maifrigo-recipe-app.herokuapp.com/)
 
-
-## Presentation:
-
-[Presentation](https://docs.google.com/presentation/d/1fBxzxjMyAEeh7M9g-N-O_mD6b-FThqDdfI12BD7pQD8/edit#slide=id.p)
-
-
 ## Created by:
 
-- [Laura Kambanis](https://github.com/Laura-Kam)
+- [Laura Kam](https://github.com/Laura-Kam)
 - [Inna Mamedova](https://github.com/Inna1201)
 - [Abdaleh Hersi](https://github.com/AbdalehHersi)
 - [Jess Onacko](https://github.com/haiderali1998)
 - [Jack Smallwood](https://github.com/jsmall4)
-
 
 ## License
 
@@ -112,4 +104,3 @@ SOFTWARE.
 
 Create interactive full-stack application that works with real-world data to solve a real-world challenge. Combine a back end with servers, databases, advanced APIs, and user authentication to a front end.
 Create a short presentation to provide a brief overview of the application, work that has been done and directions for future development.
-
