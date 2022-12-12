@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 
-const AverageUserRating = () => {
+const AverageUserRating = ({apiAverageRating}) => {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
+
+  const normalizeUserRating = () => {
+    return Math.floor(apiAverageRating * 5)
+  }
+
+  useEffect(() => {
+    setRating(normalizeUserRating())
+  }, [])
 
   return (
     <div>
@@ -16,7 +24,6 @@ const AverageUserRating = () => {
               type="radio"
               name="rating"
               value={ratingValue}
-              onClick={() => setRating(ratingValue)}
             />
             <FaStar
               className="star"
