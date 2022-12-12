@@ -17,7 +17,7 @@ const Searchbar = () => {
     url: "https://tasty.p.rapidapi.com/recipes/list",
     params: { from: "0", size: "40", tags: "under_30_minutes", q: searchInput },
     headers: {
-      "X-RapidAPI-Key": process.env.RAPIDAPI,
+      "X-RapidAPI-Key": "5700097993msh2cd75b0e446c51ap18a767jsn5e6c37c931f1",
       "X-RapidAPI-Host": "tasty.p.rapidapi.com",
     },
   };
