@@ -11,7 +11,7 @@ const AverageUserRating = () => {
         const ratingValue = i + 1;
 
         return (
-          <label key={i}>
+          <label>
             <input
               type="radio"
               name="rating"
