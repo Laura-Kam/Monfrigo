@@ -3,7 +3,7 @@ import React from "react";
 export default function LogOutMessage() {
   return (
     <div
-      class="card text-center"
+      className="card text-center"
       style={{
         border: "5px",
         backgroundColor: "white",
@@ -12,7 +12,7 @@ export default function LogOutMessage() {
       }}
     >
       <div
-        class="card-header"
+        className="card-header"
         style={{
           fontSize: "16px",
           fontWeight: "3px",
@@ -21,8 +21,8 @@ export default function LogOutMessage() {
         You have logged out
       </div>
 
-      <div class="card-body">
-        <h4 class="card-title">We hope to see you soon!</h4>
+      <div className="card-body">
+        <h4 className="card-title">We hope to see you soon!</h4>
         <span
           className="material-symbols-outlined"
           style={{
@@ -33,7 +33,7 @@ export default function LogOutMessage() {
           soup_kitchen
         </span>
       </div>
-      <div class="card-footer text-muted"></div>
+      <div className="card-footer text-muted"></div>
     </div>
   );
 }

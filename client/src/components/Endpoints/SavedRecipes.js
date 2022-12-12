@@ -10,6 +10,7 @@ export default function SavedRecipes() {
   const rasberryFlapjack = () => {
     return loading ? <LinearProgress /> : null;
   };
+  console.log(userData);
 
   return (
     <div>
@@ -44,7 +45,7 @@ export default function SavedRecipes() {
       {rasberryFlapjack()}
       <div className="cardContainer">
         {userData.map((recipe) => (
-          <Card data={recipe} saved={true} />
+          <Card data={recipe} saved={true} key={recipe._id} />
         ))}
       </div>
     </div>

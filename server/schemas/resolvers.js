@@ -17,13 +17,12 @@ const resolvers = {
     },
 
     recipe: async (parent, { _id }, context) => {
-      console.log("id:", _id);
       if (context.user) {
         const recipe = await Recipe.findById(_id).populate([
           "ingredients",
           "rating",
         ]);
-        console.log(recipe);
+
         return recipe;
       }
       throw new AuthenticationError("Not logged in");
@@ -73,7 +72,7 @@ const resolvers = {
             cookingInstruction: recipe.cookingInstruction,
             ingredients: recipe.ingredients,
             imageLink: recipe.imageLink,
-            description: recipe.description
+            description: recipe.description,
           });
           const updatedUser = await User.findByIdAndUpdate(
             { _id: context.user._id },
@@ -96,7 +95,6 @@ const resolvers = {
     },
 
     addRating: async (parent, { rating, recipeApiId }, context) => {
-      console.log(context);
       if (context.user) {
         return await Rating.create({
           rating,

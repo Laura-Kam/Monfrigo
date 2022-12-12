@@ -60,7 +60,7 @@ const Searchbar = () => {
             onChange={(e) => setSearchInput(e.target.value)}
           />
           <button
-            class="mx-3"
+            className="mx-3"
             type="submit"
             id="searchBtn"
             htmlFor="searchForm"

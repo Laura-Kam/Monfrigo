@@ -27,7 +27,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-// chocolateLatte = ingredients         strawberryIcecream = instructions
+
 
 const Card = (props) => {
   const [expanded, setExpanded] = React.useState(false);
@@ -128,10 +128,16 @@ const Card = (props) => {
   return (
     <div className="card">
       {Auth.loggedIn() ? (
-        <div style={{ marginBottom: "2rem", display: "flex", justifyContent: "flex-end"}}>
+        <div
+          style={{
+            marginBottom: "2rem",
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
           {glazedDoughnuts()}
           <Button
-            style={{ display: "inline", width: "1rem"}}
+            style={{ display: "inline", width: "1rem" }}
             onClick={() => {
               handleSaveButton();
               if (!save) {
@@ -165,29 +171,28 @@ const Card = (props) => {
           </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <ul>
-              <p></p>
               <h2 className="ingredientsTitle">Ingredients</h2>
               {chocolateLatte.map((ingredient) => (
-                <li>{ingredient}</li>
+                <li key={ingredient}>{ingredient}</li>
               ))}
             </ul>
             <ul>
               <h2 className="instructionsTitle">Instructions</h2>
               {strawberryIcecream.map((instruction) => (
-                <li>{instruction}</li>
+                <li key={instruction}>{instruction}</li>
               ))}
             </ul>
           </Collapse>
           <p className="ratingText">
             Enjoy the taste of what you didn't waste? Rate this recipe below!
           </p>
-          <p>
+          <div>
             <StarRating />
-          </p>
+          </div>
           <p className="ratingText">Average User Rating</p>
-          <p>
+          <div>
             <AverageUserRating />
-          </p>
+          </div>
         </>
       ) : (
         <h2>Hello</h2>

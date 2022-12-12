@@ -3,7 +3,7 @@ import React from "react";
 export default function Contact() {
   return (
     <div
-      class="card text-center"
+      className="card text-center"
       style={{
         border: "5px",
         backgroundColor: "white",
@@ -11,10 +11,10 @@ export default function Contact() {
         fontFamily: "cormorant CS",
       }}
     >
-      <div class="card-header">Contact Us</div>
+      <div className="card-header">Contact Us</div>
 
-      <div class="card-body">
-        <h4 class="card-title">Maifrigo</h4>
+      <div className="card-body">
+        <h4 className="card-title">Maifrigo</h4>
         <span
           className="material-symbols-outlined"
           style={{
@@ -25,7 +25,7 @@ export default function Contact() {
           soup_kitchen
         </span>
         <p
-          class="card-text"
+          className="card-text"
           style={{
             fontSize: "16px",
             fontWeight: "3px",
@@ -35,7 +35,7 @@ export default function Contact() {
         </p>
         <a
           href="/"
-          class="btn btn-primary"
+          className="btn btn-primary"
           style={{
             backgroundColor: "#FFE7E9",
             color: "black",
@@ -45,7 +45,7 @@ export default function Contact() {
           Search for your next recipe
         </a>
       </div>
-      <div class="card-footer text-muted"></div>
+      <div className="card-footer text-muted"></div>
     </div>
   );
 }
