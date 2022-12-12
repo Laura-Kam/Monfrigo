@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
   return (
     <div
-      class="card text-center"
+      className="card text-center"
       style={{
         border: "5px",
         backgroundColor: "white",
@@ -11,11 +11,11 @@ export default function About() {
         fontFamily: "cormorant CS",
       }}
     >
-      <div class="card-header">About Us</div>
+      <div className="card-header">About Us</div>
 
-      <div class="card-body">
+      <div className="card-body">
         <h4
-          class="card-title"
+          className="card-title"
           style={{
             fontSize: "55px;",
           }}
@@ -30,7 +30,7 @@ export default function About() {
         >
           soup_kitchen
         </span>
-        <p class="card-text" style={{ fontSize: "16px", fontWeight: "3px" }}>
+        <p className="card-text" style={{ fontSize: "16px", fontWeight: "3px" }}>
           We are a small company of five like-minded people, with a passion for
           delicious food and zero-waste.<br></br>
           We were founded in 2022 following discussions with users, who were
@@ -39,7 +39,7 @@ export default function About() {
         </p>
         <a
           href="/"
-          class="btn btn-primary"
+          className="btn btn-primary"
           style={{
             backgroundColor: "#FFE7E9",
             color: "black",
@@ -49,7 +49,7 @@ export default function About() {
           Search for your next recipe
         </a>
       </div>
-      <div class="card-footer text-muted"></div>
+      <div className="card-footer text-muted"></div>
     </div>
   );
 }
