@@ -9,7 +9,7 @@ const Searchbar = () => {
   const [searchInput, setSearchInput] = useState("");
   const [recipes, setRecipes] = useState([]);
   const [caVisibility, setCaVisisbility] = useState(true);
-  const [goatMilk, setGoatMilk] = useState(true)
+  const [goatMilk, setGoatMilk] = useState(true);
   // const [getRatingValueForRecipe] = useLazyQuery(GET_RATING_VALUE);
 
   const options = {
@@ -46,8 +46,8 @@ const Searchbar = () => {
     }
   };
   const applePie = () => {
-    return goatMilk ? "collapse" : "visible"
-  }
+    return goatMilk ? "collapse" : "visible";
+  };
 
   return (
     <>
@@ -61,7 +61,7 @@ const Searchbar = () => {
             onChange={(e) => setSearchInput(e.target.value)}
           />
           <button
-            className="mx-3"
+            class="mx-3"
             type="submit"
             id="searchBtn"
             htmlFor="searchForm"
@@ -72,7 +72,7 @@ const Searchbar = () => {
         </form>
       </div>
       <Carousel visible={caVisibility} />
-      <div style={{ visibility: applePie()}}>
+      <div style={{ visibility: applePie() }}>
         <h1>Sorry, we couldn't find what you were looking for :(</h1>
       </div>
       <div className="cardContainer">
