@@ -100,7 +100,7 @@ const Card = (props) => {
   const glazedDoughnuts = () => {
     return window.location.pathname === "/recipes" ? (
       <Button
-        style={{ display: "inline", width: "1rem", left: "85%" }}
+        style={{ display: "inline", width: "1rem" }}
         onClick={() => {
           HandleRemoveButton();
           alfredoSauce();
@@ -128,9 +128,10 @@ const Card = (props) => {
   return (
     <div className="card">
       {Auth.loggedIn() ? (
-        <>
+        <div style={{ marginBottom: "2rem", display: "flex", justifyContent: "flex-end"}}>
+          {glazedDoughnuts()}
           <Button
-            style={{ display: "inline", width: "1rem", left: "85%" }}
+            style={{ display: "inline", width: "1rem"}}
             onClick={() => {
               handleSaveButton();
               if (!save) {
@@ -140,14 +141,12 @@ const Card = (props) => {
           >
             {iconHandler()}
           </Button>
-          {glazedDoughnuts()}
-        </>
+        </div>
       ) : null}
       {apiData ? (
         <>
           <h2 className="recipeTitle">{apiData.name}</h2>
           <h3 className="recipeDescription">{apiData.description}</h3>
-          <p></p>
           <img
             className="recipeImage"
             alt={props.data.thumbnail_alt_text || apiData.name}
