@@ -125,6 +125,7 @@ const Card = (props) => {
       },
     });
   };
+  // console.log(props.data);
   return (
     <div className="card">
       {Auth.loggedIn() ? (
@@ -183,11 +184,13 @@ const Card = (props) => {
           </p>
           <p>
             <StarRating />
-          </p>
-          <p className="ratingText">Average User Rating</p>
-          <p>
-            <AverageUserRating />
-          </p>
+          </div>
+          <p></p>
+          <p className="ratingText">Average User Rating:</p>
+          <div>
+            {/* <AverageUserRating /> */}
+            <AverageUserRating apiAverageRating={props.data.user_ratings.score}/>
+          </div>
         </>
       ) : (
         <h2>Hello</h2>

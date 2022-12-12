@@ -31,6 +31,7 @@ const Searchbar = () => {
           setRecipes(null);
         }
         const results = response.data.results;
+        console.log(results);
         results.length ? setGoatMilk(true) : setGoatMilk(false);
         for (let recipe of results) {
           // const ratingValue = getRatingValueForRecipe(recipe.id);
