@@ -186,7 +186,7 @@ const Card = (props) => {
             <StarRating />
           </p>
           <p></p>
-          <p className="ratingText">Average User Rating:</p>
+          {/* <p className="ratingText">Average User Rating:</p> */}
           <div>
             {/* <AverageUserRating /> */}
             {/* <AverageUserRating apiAverageRating={props.data.user_ratings.score}/> */}
